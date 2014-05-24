@@ -92,8 +92,8 @@ class Main(QtGui.QWidget):
             self.errorMessageDialog.showMessage("Debe seleccionar una fila")
             return False
         else:
-            rut = model.index(index.row(), 0, QtCore.QModelIndex()).data()
-            if (controller.delete(rut)):
+            codigo = model.index(index.row(), 0, QtCore.QModelIndex()).data()
+            if (controller.delete(codigo)):
                 self.load_data()
                 msgBox = QtGui.QMessageBox()
                 msgBox.setText("EL registro fue eliminado.")
