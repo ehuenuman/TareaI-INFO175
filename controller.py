@@ -20,13 +20,13 @@ def obtener_productos():
     return productos
 
 
-def delete(rut):
+def delete(codigo):
     exito = False
     con = conectar()
     c = con.cursor()
     query = "DELETE FROM productos WHERE codigo = ?"
     try:
-        resultado = c.execute(query, [rut])
+        resultado = c.execute(query, [codigo])
         con.commit()
         exito = True
     except sqlite3.Error as e:
