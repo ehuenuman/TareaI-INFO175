@@ -14,6 +14,7 @@ class Main(QtGui.QWidget):
         self.main_layout = QtGui.QVBoxLayout(self)
         #Dibujar grilla
         self.render_toolbox()
+        self.render_toolbox2()
         self.render_table()
         self.load_data()
         self.set_signals()
@@ -35,6 +36,22 @@ class Main(QtGui.QWidget):
         self.tb_layout.addWidget(self.btn_delete)
         #Agregamos el widget toolbox a la pantalla principal
         self.main_layout.addWidget(self.toolbox)
+
+    def render_toolbox2(self):
+
+        self.toolbox2 = QtGui.QWidget(self)
+        self.tb2_layout = QtGui.QHBoxLayout()
+        self.tb2_layout.setAlignment(QtCore.Qt.AlignLeft)
+        self.toolbox2.setLayout(self.tb2_layout)
+
+        self.label_producto = QtGui.QLabel(self)
+        self.label_producto.setText(u"¿Qué producto está buscando?")
+
+        self.busqueda_rapida = QtGui.QLineEdit()
+        self.tb2_layout.addWidget(self.label_producto)
+        self.tb2_layout.addWidget(self.busqueda_rapida)
+
+        self.main_layout.addWidget(self.toolbox2)
 
     def render_table(self):
         self.table = QtGui.QTableView(self)
