@@ -45,11 +45,18 @@ class Main(QtGui.QWidget):
         self.toolbox2.setLayout(self.tb2_layout)
 
         self.label_producto = QtGui.QLabel(self)
-        self.label_producto.setText(u"¿Qué producto está buscando?")
-
+        self.label_producto.setText(u"¿Qué producto está buscando?:")
         self.busqueda_rapida = QtGui.QLineEdit()
+
+        self.label_marca = QtGui.QLabel(self)
+        self.label_marca.setText(u"Seleccione Marca:")
+        self.cb_marca = QtGui.QComboBox(self)
+        self.cb_marca.insertItem(0, u"\t")
+
         self.tb2_layout.addWidget(self.label_producto)
         self.tb2_layout.addWidget(self.busqueda_rapida)
+        self.tb2_layout.addWidget(self.label_marca)
+        self.tb2_layout.addWidget(self.cb_marca)
 
         self.main_layout.addWidget(self.toolbox2)
 
