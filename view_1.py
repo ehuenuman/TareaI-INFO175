@@ -53,6 +53,12 @@ class Main(QtGui.QWidget):
         self.cb_marca = QtGui.QComboBox(self)
         self.cb_marca.insertItem(0, u"\t")
 
+        marcas = controller.obtener_marcas()
+        index = 1
+        for row in marcas:
+            self.cb_marca.insertItem(index, row["nombre"])
+            index = index + 1
+
         self.tb2_layout.addWidget(self.label_producto)
         self.tb2_layout.addWidget(self.busqueda_rapida)
         self.tb2_layout.addWidget(self.label_marca)
@@ -81,6 +87,9 @@ class Main(QtGui.QWidget):
         self.model.setHorizontalHeaderItem(4, QtGui.QStandardItem(u"Precio"))
         self.model.setHorizontalHeaderItem(5, QtGui.QStandardItem(u"Marca"))
 
+        marcas = controller.obtener_marcas()
+        temp_marcas = [row["nombre"] for row in marcas]
+
         r = 0
         for row in producto:
             index = self.model.index(r, 0, QtCore.QModelIndex())
@@ -94,7 +103,7 @@ class Main(QtGui.QWidget):
             index = self.model.index(r, 4, QtCore.QModelIndex())
             self.model.setData(index, row['precio'])
             index = self.model.index(r, 5, QtCore.QModelIndex())
-            self.model.setData(index, row['fk_id_marca'])
+            self.model.setData(index, temp_marcas[row['fk_id_marca']])
             r = r + 1
         self.table.setModel(self.model)
 
