@@ -20,6 +20,16 @@ def obtener_productos():
     return productos
 
 
+def obtener_marcas():
+    con = conectar()
+    c = con.cursor()
+    query = "SELECT nombre FROM marcas"
+    resultado = c.execute(query)
+    marcas = resultado.fetchall()
+    con.close()
+    return marcas
+
+
 def delete(codigo):
     exito = False
     con = conectar()
@@ -37,6 +47,7 @@ def delete(codigo):
 
 if __name__ == "__main__":
 
-    productos = obtener_productos()
-    for producto in productos:
-        print producto["nombre"]
+    marcas = obtener_marcas()
+    print len(marcas)
+    for marcas in marcas:
+        print marcas["nombre"]
