@@ -103,7 +103,7 @@ class Main(QtGui.QWidget):
             index = self.model.index(r, 4, QtCore.QModelIndex())
             self.model.setData(index, row['precio'])
             index = self.model.index(r, 5, QtCore.QModelIndex())
-            self.model.setData(index, temp_marcas[row['fk_id_marca']])
+            self.model.setData(index, temp_marcas[row['fk_id_marca'] - 1])
             r = r + 1
         self.table.setModel(self.model)
 
