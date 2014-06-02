@@ -5,18 +5,18 @@ from PySide import QtGui, QtCore
 import controller
 
 
-class Main(QtGui.QWidget):
+class TablaProductos(QtGui.QWidget):
     def __init__(self):
-        super(Main, self).__init__()
+        super(TablaProductos, self).__init__()
         self.resize(900, 500)
-        self.setWindowTitle("Tabla Productos Distribuidor")
+        self.setWindowTitle("Productos Distribuidor")
         #http://srinikom.github.io/pyside-docs/PySide/QtGui/QVBoxLayout.html
         self.main_layout = QtGui.QVBoxLayout(self)
         #Dibujar grilla
         self.render_toolbox()
         self.render_toolbox2()
-        self.render_table()
-        self.load_data()
+        self.render_proxyTable()
+        self.load_data(TablaProductos)
         self.set_signals()
         self.show()
 
@@ -51,7 +51,7 @@ class Main(QtGui.QWidget):
         self.label_marca = QtGui.QLabel(self)
         self.label_marca.setText(u"Seleccione Marca:")
         self.cb_marca = QtGui.QComboBox(self)
-        self.cb_marca.insertItem(0, u"\t")
+        self.cb_marca.insertItem(0, u"Todas")
 
         marcas = controller.obtener_marcas()
         index = 1
@@ -66,17 +66,24 @@ class Main(QtGui.QWidget):
 
         self.main_layout.addWidget(self.toolbox2)
 
-    def render_table(self):
-        self.table = QtGui.QTableView(self)
-        self.table.setFixedWidth(890)
-        self.table.setFixedHeight(450)
-        self.table.setSelectionBehavior(QtGui.QAbstractItemView.SelectRows)
-        self.table.setAlternatingRowColors(True)
-        self.table.setSortingEnabled(True)
-        #Se incorpora la tabla al layout
-        self.main_layout.addWidget(self.table)
+    def render_proxyTable(self):
+        self.proxyModel = QtGui.QSortFilterProxyModel()
+        self.proxyModel.setDynamicSortFilter(True)
 
-    def load_data(self):
+        self.proxyView = QtGui.QTreeView()
+        self.proxyView.setRootIsDecorated(False)
+        self.proxyView.setAlternatingRowColors(True)
+        self.proxyView.setModel(self.proxyModel)
+        self.proxyView.setSortingEnabled(True)
+
+        self.main_layout.addWidget(self.proxyView)
+
+        self.proxyView.sortByColumn(1, QtCore.Qt.AscendingOrder)
+
+    def setSourceModel(self, modelo):
+        self.proxyModel.setSourceModel(modelo)
+
+    def load_data(self, parent):
         producto = controller.obtener_productos()
         #Creamos el modelo asociado a la tabla
         self.model = QtGui.QStandardItemModel(len(producto), 6)
@@ -105,21 +112,23 @@ class Main(QtGui.QWidget):
             index = self.model.index(r, 5, QtCore.QModelIndex())
             self.model.setData(index, temp_marcas[row['fk_id_marca'] - 1])
             r = r + 1
-        self.table.setModel(self.model)
 
-        self.table.setColumnWidth(0, 80)
-        self.table.setColumnWidth(1, 210)
-        self.table.setColumnWidth(2, 210)
-        self.table.setColumnWidth(3, 100)
-        self.table.setColumnWidth(4, 150)
-        self.table.setColumnWidth(5, 100)
+        self.proxyView.setModel(self.model)
+
+        self.proxyView.setColumnWidth(0, 80)
+        self.proxyView.setColumnWidth(1, 150)
+        self.proxyView.setColumnWidth(2, 270)
+        self.proxyView.setColumnWidth(3, 100)
+        self.proxyView.setColumnWidth(4, 150)
+        self.proxyView.setColumnWidth(5, 100)
 
     def set_signals(self):
         self.btn_delete.clicked.connect(self.delete)
+        self.busqueda_rapida.textChanged.connect(self.filtrarProductos)
 
     def delete(self):
-        model = self.table.model()
-        index = self.table.currentIndex()
+        model = self.proxyTable.model()
+        index = self.proxyTable.currentIndex()
         if index.row() == -1:  # No se ha seleccionado una fila
             self.errorMessageDialog = QtGui.QErrorMessage(self)
             self.errorMessageDialog.showMessage("Debe seleccionar una fila")
@@ -138,10 +147,20 @@ class Main(QtGui.QWidget):
                                                         registro""")
                 return False
 
+    def filtrarProductos(self):
+        print "Filtrando"
+        self.proxyModel.setFilterKeyColumn(1)
+        regExp = QtCore.QRegExp(self.busqueda_rapida.text(),
+                QtCore.Qt.CaseInsensitive, QtCore.QRegExp.RegExp)
+
+        self.proxyModel.setFilterRegExp(regExp)
+
 
 def run():
+
     app = QtGui.QApplication(sys.argv)
-    main = Main()
+    tabla = TablaProductos()
+    #tabla.setSourceModel(load_data(tabla))
     sys.exit(app.exec_())
 
 if __name__ == '__main__':
