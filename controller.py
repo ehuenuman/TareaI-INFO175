@@ -19,6 +19,13 @@ def obtener_productos():
     con.close()
     return productos
 
+def ingresar_productos(valores):
+    con = conectar()
+    c = con.cursor()
+    query = "INSERT INTO productos (codigo,nombre,descripcion,color,precio,fk_id_marca)VALUES (?,?,?,?,?,?)"
+    c.execute(query, valores)
+    con.commit()
+
 
 def delete(codigo):
     exito = False
