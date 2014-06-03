@@ -3,7 +3,7 @@
 import sys
 from PySide import QtGui, QtCore
 import controller
-
+import view_form
 
 class Main(QtGui.QWidget):
     def __init__(self):
@@ -83,6 +83,19 @@ class Main(QtGui.QWidget):
 
     def set_signals(self):
         self.btn_delete.clicked.connect(self.delete)
+        self.btn_add.clicked.connect(self.show_form)
+
+    def show_form(self):
+        form = view_form.Form(self)
+        form.rejected.connect(self.load_producto)
+        form.exec_()
+
+    def load_producto(self):
+        val = view_form.Form(self)
+        val = val.add_valores()
+        print val
+        controller.ingresar_productos(val)
+        self.load_data()
 
     def delete(self):
         model = self.table.model()
