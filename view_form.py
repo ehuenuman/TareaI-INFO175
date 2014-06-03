@@ -10,7 +10,7 @@ class Form (QtGui.QDialog):
         self.ui = Ui_nuevoProducto()
         self.ui.setupUi(self)
         self.ui.Btn_add.clicked.connect(self.add_valores)
-        self.ui.Btn_cancel.clicked.connect(self.reject)
+#        self.ui.Btn_cancel.clicked.connect(self.reject)
     def add(self):
         self.reject()
 
@@ -28,6 +28,6 @@ class Form (QtGui.QDialog):
 #        print valores[3]
 #        print valores[4]
 #        print valores[5]
-#        self.reject()
+        self.reject()
         return self.valores
 
