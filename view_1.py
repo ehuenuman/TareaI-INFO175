@@ -87,15 +87,9 @@ class Main(QtGui.QWidget):
 
     def show_form(self):
         form = view_form.Form(self)
-        form.rejected.connect(self.load_producto)
+        form.rejected.connect(self.load_data)
         form.exec_()
 
-    def load_producto(self):
-        val = view_form.Form(self)
-        val = val.add_valores()
-        print val
-        controller.ingresar_productos(val)
-        self.load_data()
 
     def delete(self):
         model = self.table.model()
