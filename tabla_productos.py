@@ -5,9 +5,9 @@ import sys
 import controller
 
 
-class Window(QtGui.QWidget):
+class TablaProductos(QtGui.QWidget):
     def __init__(self):
-        super(Window, self).__init__()
+        super(TablaProductos, self).__init__()
 
         self.tipoModel = None
         self.setWindowTitle("Productos Distribuidor")
@@ -135,9 +135,9 @@ class Window(QtGui.QWidget):
         self.filtroBusquedaProductoLineEdit.textChanged.connect(
             self.filtrarProductos
             )
-       # self.filtroBusquedaMarcaComboBox.currentIndexChanged.connect(
-        #    self.filtrarMarca
-         #   )
+        self.filtroBusquedaMarcaComboBox.currentIndexChanged.connect(
+            self.filtrarMarca
+            )
 
     def delete(self):
         model = self.proxyView.model()
@@ -161,16 +161,33 @@ class Window(QtGui.QWidget):
                 return False
 
     def filtrarProductos(self):
-        print "Filtrando"
+        print "Filtro Productos"
         self.proxyModel.setFilterKeyColumn(1)
-        regExp = QtCore.QRegExp(self.filtroBusquedaProductoLineEdit.text(),
+
+        productoAFiltrar = QtCore.QRegExp(self.filtroBusquedaProductoLineEdit.text(),
                 QtCore.Qt.CaseInsensitive, QtCore.QRegExp.RegExp)
 
-        self.proxyModel.setFilterRegExp(regExp)
+        self.proxyModel.setFilterRegExp(productoAFiltrar)
 
+    def filtrarMarca(self):
+        print "Filtro Marca"
+        self.proxyModel.setFilterKeyColumn(5)
+
+        index = self.filtroBusquedaMarcaComboBox.currentIndex()
+        if (index != 0):
+            print "Filtrados"
+            marcaFiltro = self.filtroBusquedaMarcaComboBox.itemText(index)
+
+        else:
+            print "Lista Completa"
+            marcaFiltro = u"|"
+
+        marcaAFiltrar = QtCore.QRegExp(
+            marcaFiltro, QtCore.Qt.CaseInsensitive, QtCore.QRegExp.RegExp)
+        self.proxyModel.setFilterRegExp(marcaAFiltrar)
 
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
-    window = Window()
+    window = TablaProductos()
     window.setSourceModel(window.loadData(window))
     sys.exit(app.exec_())
