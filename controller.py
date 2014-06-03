@@ -3,7 +3,6 @@
 
 import sqlite3
 
-
 def conectar():
     con = sqlite3.connect('EmpresaDistribuidora.db')
     con.row_factory = sqlite3.Row
@@ -19,6 +18,16 @@ def obtener_productos():
     con.close()
     return productos
 
+def obtener_marca():
+    con = conectar()
+    c = con.cursor()
+    query = "SELECT * FROM marcas"
+    resultado = c.execute(query)
+    marca = resultado.fetchall()
+    con.close()
+    return marca
+
+
 def ingresar_productos(valores):
     con = conectar()
     c = con.cursor()
@@ -26,6 +35,19 @@ def ingresar_productos(valores):
     c.execute(query, valores)
     con.commit()
 
+def ingresar_marca(valores):
+    con = conectar()
+    c = con.cursor()
+    t=0
+    marcas = obtener_marca()
+    for row in marcas:
+        t = t+1
+    cont = t+1
+    print t
+    val = [cont,valores[5],"No disponible","No disponible"]
+    query = "INSERT INTO marcas (id_marca,nombre,descripcion,pais)VALUES (?,?,?,?)"
+    c.execute(query, val)
+    con.commit()
 
 def delete(codigo):
     exito = False
@@ -44,6 +66,8 @@ def delete(codigo):
 
 if __name__ == "__main__":
 
-    productos = obtener_productos()
-    for producto in productos:
-        print producto["nombre"]
+    marcas = obtener_marca()
+    t=0
+    for row in marcas:
+        t = t+1
+    print t
