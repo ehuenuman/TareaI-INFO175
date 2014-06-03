@@ -10,7 +10,7 @@ class Form (QtGui.QDialog):
         self.ui = Ui_nuevoProducto()
         self.ui.setupUi(self)
         self.ui.Btn_add.clicked.connect(self.add_valores)
-#        self.ui.Btn_cancel.clicked.connect(self.reject)
+        self.ui.Btn_cancel.clicked.connect(self.add)
     def add(self):
         self.reject()
 
@@ -22,12 +22,14 @@ class Form (QtGui.QDialog):
         self.pre = str(self.ui.precio.text())
         self.mar = str(self.ui.marca.text())
         self.valores = [self.cod, self.nom, self.des, self.col, self.pre, self.mar]
-        print self.valores[0]
+        controller.ingresar_productos(self.valores)
+        controller.ingresar_marca(self.valores)
+#        print self.valores[0]
 #        print valores[1]
 #        print valores[2]
 #        print valores[3]
 #        print valores[4]
 #        print valores[5]
         self.reject()
-        return self.valores
+
 
