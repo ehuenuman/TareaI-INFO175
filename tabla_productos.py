@@ -59,13 +59,12 @@ class TablaProductos(QtGui.QWidget):
             self.filtroBusquedaMarcaComboBox.insertItem(index, row["nombre"])
             index = index + 1
 
+        #Añadimos los Label, ComboBox y LineEdit al layout
         self.tb2_layout.addWidget(self.filtroBusquedaProductoLabel)
         self.tb2_layout.addWidget(self.filtroBusquedaProductoLineEdit)
         self.tb2_layout.addWidget(self.filtroBusquedaMarcaLabel)
         self.tb2_layout.addWidget(self.filtroBusquedaMarcaComboBox)
 
-        #self.filtroBusquedaProductosLineEdit.setText("Polera")
-        #self.filtroBusquedaMarcaComboBox.setCurrentIndex(0)
         self.mainLayout.addWidget(self.toolbox2)
 
     def renderProxyTable(self):
@@ -96,6 +95,13 @@ class TablaProductos(QtGui.QWidget):
     def setSourceModel(self, model):
         self.proxyModel.setSourceModel(model)
         #self.proxyView.setModel(model)
+
+        self.proxyView.setColumnWidth(0, 80)
+        self.proxyView.setColumnWidth(1, 160)
+        self.proxyView.setColumnWidth(2, 270)
+        self.proxyView.setColumnWidth(3, 100)
+        self.proxyView.setColumnWidth(4, 120)
+        self.proxyView.setColumnWidth(5, 90)
 
     def loadData(self, parent):
         self.tipoModel = parent
@@ -164,8 +170,9 @@ class TablaProductos(QtGui.QWidget):
         print "Filtro Productos"
         self.proxyModel.setFilterKeyColumn(1)
 
-        productoAFiltrar = QtCore.QRegExp(self.filtroBusquedaProductoLineEdit.text(),
-                QtCore.Qt.CaseInsensitive, QtCore.QRegExp.RegExp)
+        productoAFiltrar = QtCore.QRegExp(
+            self.filtroBusquedaProductoLineEdit.text(),
+            QtCore.Qt.CaseInsensitive, QtCore.QRegExp.RegExp)
 
         self.proxyModel.setFilterRegExp(productoAFiltrar)
 
