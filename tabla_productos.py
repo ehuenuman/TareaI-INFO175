@@ -12,6 +12,7 @@ class TablaProductos(QtGui.QWidget):
         self.tipoModel = None
         self.setWindowTitle("Productos Distribuidor")
         self.resize(900, 500)
+        self.center()
         self.mainLayout = QtGui.QVBoxLayout()
         #Dibujar Interfaz
         self.renderToolBox()
@@ -19,6 +20,12 @@ class TablaProductos(QtGui.QWidget):
         self.renderProxyTable()
         self.setSignals()
         self.show()
+
+    def center(self):
+        qr = self.frameGeometry()
+        cp = QtGui.QDesktopWidget().availableGeometry().center()
+        qr.moveCenter(cp)
+        self.move(qr.topLeft())
 
     def renderToolBox(self):
         self.toolbox = QtGui.QWidget(self)
@@ -167,7 +174,6 @@ class TablaProductos(QtGui.QWidget):
                 return False
 
     def filtrarProductos(self):
-        print "Filtro Productos"
         self.proxyModel.setFilterKeyColumn(1)
 
         productoAFiltrar = QtCore.QRegExp(
@@ -177,16 +183,13 @@ class TablaProductos(QtGui.QWidget):
         self.proxyModel.setFilterRegExp(productoAFiltrar)
 
     def filtrarMarca(self):
-        print "Filtro Marca"
         self.proxyModel.setFilterKeyColumn(5)
 
         index = self.filtroBusquedaMarcaComboBox.currentIndex()
         if (index != 0):
-            print "Filtrados"
             marcaFiltro = self.filtroBusquedaMarcaComboBox.itemText(index)
 
         else:
-            print "Lista Completa"
             marcaFiltro = u"|"
 
         marcaAFiltrar = QtCore.QRegExp(
