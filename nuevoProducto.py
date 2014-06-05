@@ -9,6 +9,7 @@
 
 from PySide import QtCore, QtGui
 
+
 class Ui_nuevoProducto(object):
     def setupUi(self, nuevoProducto):
         nuevoProducto.setObjectName("nuevoProducto")
@@ -58,7 +59,6 @@ class Ui_nuevoProducto(object):
 
         self.retranslateUi(nuevoProducto)
         QtCore.QMetaObject.connectSlotsByName(nuevoProducto)
-
 
     def retranslateUi(self, nuevoProducto):
         nuevoProducto.setWindowTitle(QtGui.QApplication.translate("nuevoProducto", "Producto Nuevo", None, QtGui.QApplication.UnicodeUTF8))

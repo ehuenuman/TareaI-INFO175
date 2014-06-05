@@ -3,6 +3,7 @@
 
 import sqlite3
 
+
 def conectar():
     con = sqlite3.connect('EmpresaDistribuidora.db')
     con.row_factory = sqlite3.Row
@@ -18,36 +19,63 @@ def obtener_productos():
     con.close()
     return productos
 
-def obtener_marca():
+
+def obtener_marcas():
     con = conectar()
     c = con.cursor()
-    query = "SELECT * FROM marcas"
+    query = "SELECT nombre FROM marcas"
     resultado = c.execute(query)
-    marca = resultado.fetchall()
+    marcas = resultado.fetchall()
     con.close()
-    return marca
+    return marcas
 
 
-def ingresar_productos(valores):
+def ingresar_producto(valores):
     con = conectar()
     c = con.cursor()
-    query = "INSERT INTO productos (codigo,nombre,descripcion,color,precio,fk_id_marca)VALUES (?,?,?,?,?,?)"
+    query = """INSERT INTO productos (
+        codigo, nombre, descripcion,
+        color, precio, fk_id_marca)
+        VALUES (?,?,?,?,?,?)"""
     c.execute(query, valores)
     con.commit()
 
-def ingresar_marca(valores):
+
+def ingresar_marca(id_marca, nueva_marca):
     con = conectar()
     c = con.cursor()
-    t=0
-    marcas = obtener_marca()
-    for row in marcas:
-        t = t+1
-    cont = t+1
-    print t
-    val = [cont,valores[5],"No disponible","No disponible"]
-    query = "INSERT INTO marcas (id_marca,nombre,descripcion,pais)VALUES (?,?,?,?)"
+
+    val = [id_marca, nueva_marca, "No disponible", "No disponible"]
+    query = """INSERT INTO marcas (
+        id_marca, nombre, descripcion, pais)
+        VALUES (?,?,?,?)"""
+
     c.execute(query, val)
     con.commit()
+
+def update(codigo,valores):
+    exito = False
+    con = conectar()
+    c = con.cursor()
+    cod=valores[0]
+    nom=valores[1]
+    des=valores[2]
+    col=valores[3]
+    pre=valores[4]
+    fk=valores[5]
+    total=(cod,nom,des,col,pre,fk,codigo)
+    query = '''UPDATE productos
+            SET codigo=?,nombre=?,descripcion=?,color=?, precio=?,fk_id_marca=?
+            WHERE codigo=? '''
+    try:
+        resultado = c.execute(query,total)
+        con.commit()
+        exito = True
+    except sqlite3.Error as e:
+        exito = False
+        print "Error:",e.arg[0]
+    con.close()
+    return exito
 
 def delete(codigo):
     exito = False
@@ -63,11 +91,3 @@ def delete(codigo):
         print "Error:", e.args[0]
     con.close()
     return exito
-
-if __name__ == "__main__":
-
-    marcas = obtener_marca()
-    t=0
-    for row in marcas:
-        t = t+1
-    print t

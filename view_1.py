@@ -5,6 +5,8 @@ from PySide import QtGui, QtCore
 import controller
 import view_form
 
+
+
 class Main(QtGui.QWidget):
     def __init__(self):
         super(Main, self).__init__()
@@ -20,7 +22,6 @@ class Main(QtGui.QWidget):
         self.show()
 
     def render_toolbox(self):
-
         self.toolbox = QtGui.QWidget(self)
         self.tb_layout = QtGui.QHBoxLayout()
         self.tb_layout.setAlignment(QtCore.Qt.AlignRight)
@@ -84,27 +85,22 @@ class Main(QtGui.QWidget):
     def set_signals(self):
         self.btn_delete.clicked.connect(self.delete)
         self.btn_add.clicked.connect(self.show_form)
+        self.btn_edit.clicked.connect(self.edit)
 
     def show_form(self):
         form = view_form.Form(self)
         form.rejected.connect(self.load_data)
         form.exec_()
 
-
     def delete(self):
-        model = self.table.model()
-        index = self.table.currentIndex()
-        if index.row() == -1:  # No se ha seleccionado una fila
-            self.errorMessageDialog = QtGui.QErrorMessage(self)
-            self.errorMessageDialog.showMessage("Debe seleccionar una fila")
-            return False
-        else:
+        def borrar():
             codigo = model.index(index.row(), 0, QtCore.QModelIndex()).data()
             if (controller.delete(codigo)):
                 self.load_data()
                 msgBox = QtGui.QMessageBox()
                 msgBox.setText("EL registro fue eliminado.")
                 msgBox.exec_()
+                self.msg.hide()
                 return True
             else:
                 self.ui.errorMessageDialog = QtGui.QErrorMessage(self)
@@ -112,6 +108,53 @@ class Main(QtGui.QWidget):
                                                         registro""")
                 return False
 
+        model = self.table.model()
+        index = self.table.currentIndex()
+        if index.row() == -1:  # No se ha seleccionado una fila
+            self.errorMessageDialog = QtGui.QErrorMessage(self)
+            self.errorMessageDialog.showMessage("Debe seleccionar una fila")
+            return False
+        else:
+            #caracteristicas ventana mensaje
+            self.msg = QtGui.QWidget()
+            self.msg.resize(260,100)
+            self.msg.setMinimumSize(260, 100)
+            self.msg.setMaximumSize(260, 100)
+            self.msg.setWindowTitle('Mensaje')
+
+            self.ms_layout = QtGui.QVBoxLayout()
+            self.men_label = QtGui.QLabel()
+            self.men_label.setText(u"¿Desea borrar de la base de datos?")
+            self.msg.setLayout(self.ms_layout)
+            self.btn_ok = QtGui.QPushButton(u"&Confirmar")
+            #Agregamos los botones  y label al layout
+            self.ms_layout.addWidget(self.men_label)
+            self.ms_layout.addWidget(self.btn_ok)
+
+            self.msg.show()
+
+            self.btn_ok.clicked.connect(borrar)
+
+    def edit(self):
+        model = self.table.model()
+        index = self.table.currentIndex()
+        if index.row() == -1:  # No se ha seleccionado una fila
+            self.errorMessageDialog = QtGui.QErrorMessage(self)
+            self.errorMessageDialog.showMessage("Debe seleccionar una fila")
+            return False
+        else:
+
+            form = view_form.Form(self.code(), self)
+            form.rejected.connect(self.load_data)
+            form.exec_()
+        self.load_data()
+
+
+    def code(self):
+        model = self.table.model()
+        index = self.table.currentIndex()
+        self.codi = model.index(index.row(), 0, QtCore.QModelIndex()).data()
+        return self.codi
 
 def run():
     app = QtGui.QApplication(sys.argv)
