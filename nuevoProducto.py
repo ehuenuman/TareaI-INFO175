@@ -2,13 +2,12 @@
 
 # Form implementation generated from reading ui file 'NuevoProducto.ui'
 #
-# Created: Sat May 31 16:32:12 2014
+# Created: Thu Jun  5 21:49:48 2014
 #      by: pyside-uic 0.2.13 running on PySide 1.1.1
 #
 # WARNING! All changes made in this file will be lost!
 
 from PySide import QtCore, QtGui
-
 
 class Ui_nuevoProducto(object):
     def setupUi(self, nuevoProducto):
@@ -39,29 +38,32 @@ class Ui_nuevoProducto(object):
         self.label_6.setGeometry(QtCore.QRect(40, 190, 67, 21))
         self.label_6.setObjectName("label_6")
         self.codigo = QtGui.QLineEdit(nuevoProducto)
-        self.codigo.setGeometry(QtCore.QRect(100, 40, 91, 21))
+        self.codigo.setGeometry(QtCore.QRect(120, 40, 101, 21))
         self.codigo.setObjectName("codigo")
         self.nombre = QtGui.QLineEdit(nuevoProducto)
-        self.nombre.setGeometry(QtCore.QRect(100, 70, 91, 21))
+        self.nombre.setGeometry(QtCore.QRect(120, 70, 101, 21))
         self.nombre.setObjectName("nombre")
         self.descripcion = QtGui.QLineEdit(nuevoProducto)
         self.descripcion.setGeometry(QtCore.QRect(120, 100, 101, 21))
         self.descripcion.setObjectName("descripcion")
         self.color = QtGui.QLineEdit(nuevoProducto)
-        self.color.setGeometry(QtCore.QRect(90, 130, 101, 21))
+        self.color.setGeometry(QtCore.QRect(120, 130, 101, 21))
         self.color.setObjectName("color")
         self.precio = QtGui.QLineEdit(nuevoProducto)
-        self.precio.setGeometry(QtCore.QRect(90, 160, 101, 21))
+        self.precio.setGeometry(QtCore.QRect(120, 160, 101, 21))
         self.precio.setObjectName("precio")
         self.marca = QtGui.QLineEdit(nuevoProducto)
-        self.marca.setGeometry(QtCore.QRect(90, 190, 101, 21))
+        self.marca.setGeometry(QtCore.QRect(120, 190, 101, 21))
         self.marca.setObjectName("marca")
+        self.label_7 = QtGui.QLabel(nuevoProducto)
+        self.label_7.setGeometry(QtCore.QRect(140, 10, 101, 21))
+        self.label_7.setObjectName("label_7")
 
         self.retranslateUi(nuevoProducto)
         QtCore.QMetaObject.connectSlotsByName(nuevoProducto)
 
     def retranslateUi(self, nuevoProducto):
-        nuevoProducto.setWindowTitle(QtGui.QApplication.translate("nuevoProducto", "Producto Nuevo", None, QtGui.QApplication.UnicodeUTF8))
+        nuevoProducto.setWindowTitle(QtGui.QApplication.translate("nuevoProducto", " ", None, QtGui.QApplication.UnicodeUTF8))
         self.Btn_add.setText(QtGui.QApplication.translate("nuevoProducto", "Agregar", None, QtGui.QApplication.UnicodeUTF8))
         self.Btn_cancel.setText(QtGui.QApplication.translate("nuevoProducto", "Cancelar", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("nuevoProducto", "Codigo", None, QtGui.QApplication.UnicodeUTF8))
@@ -70,4 +72,7 @@ class Ui_nuevoProducto(object):
         self.label_4.setText(QtGui.QApplication.translate("nuevoProducto", "Color", None, QtGui.QApplication.UnicodeUTF8))
         self.label_5.setText(QtGui.QApplication.translate("nuevoProducto", "Precio", None, QtGui.QApplication.UnicodeUTF8))
         self.label_6.setText(QtGui.QApplication.translate("nuevoProducto", "Marca", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_7.setToolTip(QtGui.QApplication.translate("nuevoProducto", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">Formulario</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_7.setWhatsThis(QtGui.QApplication.translate("nuevoProducto", "<html><head/><body><p align=\"center\"><br/></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_7.setText(QtGui.QApplication.translate("nuevoProducto", "Formulario", None, QtGui.QApplication.UnicodeUTF8))
 
