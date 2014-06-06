@@ -88,7 +88,7 @@ class Main(QtGui.QWidget):
         self.btn_edit.clicked.connect(self.edit)
 
     def show_form(self):
-        form = view_form.Form(self)
+        form = view_form.Form(self.code())
         form.rejected.connect(self.load_data)
         form.exec_()
 
@@ -100,7 +100,7 @@ class Main(QtGui.QWidget):
                 msgBox = QtGui.QMessageBox()
                 msgBox.setText("EL registro fue eliminado.")
                 msgBox.exec_()
-                self.msg.hide()
+                self.msg.close()
                 return True
             else:
                 self.ui.errorMessageDialog = QtGui.QErrorMessage(self)
@@ -121,6 +121,9 @@ class Main(QtGui.QWidget):
             self.msg.setMinimumSize(260, 100)
             self.msg.setMaximumSize(260, 100)
             self.msg.setWindowTitle('Mensaje')
+            screen = QtGui.QDesktopWidget().screenGeometry()
+            size = self.msg.geometry()
+            self.msg.move((screen.width() - size.width()) / 2, (screen.height() - size.height()) / 2)
 
             self.ms_layout = QtGui.QVBoxLayout()
             self.men_label = QtGui.QLabel()
@@ -135,8 +138,8 @@ class Main(QtGui.QWidget):
 
             self.btn_ok.clicked.connect(borrar)
 
+
     def edit(self):
-        model = self.table.model()
         index = self.table.currentIndex()
         if index.row() == -1:  # No se ha seleccionado una fila
             self.errorMessageDialog = QtGui.QErrorMessage(self)
@@ -144,7 +147,7 @@ class Main(QtGui.QWidget):
             return False
         else:
 
-            form = view_form.Form(self.code(), self)
+            form = view_form.Form(self.code())
             form.rejected.connect(self.load_data)
             form.exec_()
         self.load_data()
