@@ -30,6 +30,7 @@ def obtener_marcas():
     return marcas
 
 
+<<<<<<< HEAD
 def obtener_datosProducto(index):
     con = conectar()
     c = con.cursor()
@@ -89,6 +90,8 @@ def update(codigo, valores):
     return exito
 
 
+=======
+>>>>>>> master
 def delete(codigo):
     exito = False
     con = conectar()
@@ -105,5 +108,7 @@ def delete(codigo):
     return exito
 
 
+<<<<<<< HEAD
 if __name__ == '__main__':
     obtener_datosProducto("1020B")
+>>>>>>> master
