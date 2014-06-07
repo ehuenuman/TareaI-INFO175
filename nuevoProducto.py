@@ -9,6 +9,7 @@
 
 from PySide import QtCore, QtGui
 
+
 class Ui_nuevoProducto(object):
     def setupUi(self, nuevoProducto):
         nuevoProducto.setObjectName("nuevoProducto")

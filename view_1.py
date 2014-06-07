@@ -6,7 +6,6 @@ import controller
 import view_form
 
 
-
 class Main(QtGui.QWidget):
     def __init__(self):
         super(Main, self).__init__()
@@ -93,37 +92,23 @@ class Main(QtGui.QWidget):
         form.exec_()
 
     def delete(self):
-        def borrar():
-            codigo = model.index(index.row(), 0, QtCore.QModelIndex()).data()
-            if (controller.delete(codigo)):
-                self.load_data()
-                msgBox = QtGui.QMessageBox()
-                msgBox.setText("EL registro fue eliminado.")
-                msgBox.exec_()
-                self.msg.close()
-                return True
-            else:
-                self.ui.errorMessageDialog = QtGui.QErrorMessage(self)
-                self.ui.errorMessageDialog.showMessage("""Error al eliminar el
-                                                        registro""")
-                return False
-
-        model = self.table.model()
         index = self.table.currentIndex()
         if index.row() == -1:  # No se ha seleccionado una fila
             self.errorMessageDialog = QtGui.QErrorMessage(self)
             self.errorMessageDialog.showMessage("Debe seleccionar una fila")
-            return False
         else:
             #caracteristicas ventana mensaje
             self.msg = QtGui.QWidget()
-            self.msg.resize(260,100)
+            self.msg.resize(260, 100)
             self.msg.setMinimumSize(260, 100)
             self.msg.setMaximumSize(260, 100)
             self.msg.setWindowTitle('Mensaje')
             screen = QtGui.QDesktopWidget().screenGeometry()
             size = self.msg.geometry()
-            self.msg.move((screen.width() - size.width()) / 2, (screen.height() - size.height()) / 2)
+            self.msg.move(
+                (screen.width() - size.width()) / 2,
+                (screen.height() - size.height()) / 2
+                )
 
             self.ms_layout = QtGui.QVBoxLayout()
             self.men_label = QtGui.QLabel()
@@ -136,28 +121,42 @@ class Main(QtGui.QWidget):
 
             self.msg.show()
 
-            self.btn_ok.clicked.connect(borrar)
+            self.btn_ok.clicked.connect(self.borrar)
 
+    def borrar(self):
+        model = self.table.model()
+        index = self.table.currentIndex()
+        codigo = model.index(index.row(), 0, QtCore.QModelIndex()).data()
+        if (controller.delete(codigo)):
+            self.load_data()
+            msgBox = QtGui.QMessageBox()
+            msgBox.setText("EL registro fue eliminado.")
+            msgBox.exec_()
+            self.msg.close()
+
+        else:
+            self.ui.errorMessageDialog = QtGui.QErrorMessage(self)
+            self.ui.errorMessageDialog.showMessage("""Error al eliminar el
+                                                    registro""")
 
     def edit(self):
         index = self.table.currentIndex()
         if index.row() == -1:  # No se ha seleccionado una fila
             self.errorMessageDialog = QtGui.QErrorMessage(self)
             self.errorMessageDialog.showMessage("Debe seleccionar una fila")
-            return False
         else:
-
+            datos_producto = controller.obtener_datosProducto(self.code())
             form = view_form.Form(self.code())
             form.rejected.connect(self.load_data)
             form.exec_()
         self.load_data()
-
 
     def code(self):
         model = self.table.model()
         index = self.table.currentIndex()
         self.codi = model.index(index.row(), 0, QtCore.QModelIndex()).data()
         return self.codi
+
 
 def run():
     app = QtGui.QApplication(sys.argv)

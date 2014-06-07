@@ -1,9 +1,11 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from PySide import QtGui, QtCore
+from PySide import QtGui
 import controller
 from nuevoProducto import Ui_nuevoProducto
+
+
 class Form (QtGui.QDialog):
     def __init__(self, code=None, parent=None):
         QtGui.QDialog.__init__(self, parent)
@@ -17,9 +19,9 @@ class Form (QtGui.QDialog):
             self.edit = Ui_nuevoProducto()
             self.edit.setupUi(self)
             self.edit.Btn_add.clicked.connect(self.edit_valores)
-            self.edit.Btn_cancel.clicked.connect(self.add)
+            self.edit.Btn_cancel.clicked.connect(self.cancel)
 
-    def add(self):
+    def cancel(self):
         self.reject()
 
     def add_valores(self):
