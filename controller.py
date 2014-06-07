@@ -30,13 +30,75 @@ def obtener_marcas():
     return marcas
 
 
+<<<<<<< HEAD
+def obtener_datosProducto(index):
+    con = conectar()
+    c = con.cursor()
+    query = """SELECT * FROM productos WHERE codigo = ?"""
+    resultado = c.execute(query, [index])
+    producto = resultado.fetchall()
+    con.close()
+    print producto
+
+
+def ingresar_producto(valores):
+    con = conectar()
+    c = con.cursor()
+    query = """INSERT INTO productos (
+        codigo, nombre, descripcion,
+        color, precio, fk_id_marca)
+        VALUES (?,?,?,?,?,?)"""
+    c.execute(query, valores)
+    con.commit()
+
+
+def ingresar_marca(id_marca, nueva_marca):
+    con = conectar()
+    c = con.cursor()
+
+    val = [id_marca, nueva_marca, "No disponible", "No disponible"]
+    query = """INSERT INTO marcas (
+        id_marca, nombre, descripcion, pais)
+        VALUES (?,?,?,?)"""
+
+    c.execute(query, val)
+    con.commit()
+
+
+def update(codigo, valores):
+    exito = False
+    con = conectar()
+    c = con.cursor()
+    cod = valores[0]
+    nom = valores[1]
+    des = valores[2]
+    col = valores[3]
+    pre = valores[4]
+    fk = valores[5]
+    total = (cod, nom, des, col, pre, fk, codigo)
+    query = '''UPDATE productos
+            SET codigo=?,nombre=?,descripcion=?,color=?, precio=?,fk_id_marca=?
+            WHERE codigo=? '''
+    try:
+        c.execute(query, total)
+        con.commit()
+        exito = True
+    except sqlite3.Error as e:
+        exito = False
+        print "Error:",e.arg[0]
+    con.close()
+    return exito
+
+
+=======
+>>>>>>> master
 def delete(codigo):
     exito = False
     con = conectar()
     c = con.cursor()
     query = "DELETE FROM productos WHERE codigo = ?"
     try:
-        resultado = c.execute(query, [codigo])
+        c.execute(query, [codigo])
         con.commit()
         exito = True
     except sqlite3.Error as e:
@@ -45,9 +107,8 @@ def delete(codigo):
     con.close()
     return exito
 
-if __name__ == "__main__":
 
-    marcas = obtener_marcas()
-    print len(marcas)
-    for marcas in marcas:
-        print marcas["nombre"]
+<<<<<<< HEAD
+if __name__ == '__main__':
+    obtener_datosProducto("1020B")
+>>>>>>> master
