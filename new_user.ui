@@ -81,7 +81,7 @@
     <string>Ingrese sus datos</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="loginButton">
+  <widget class="QPushButton" name="crearButton">
    <property name="geometry">
     <rect>
      <x>70</x>
