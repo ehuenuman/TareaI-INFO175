@@ -24,3 +24,29 @@ def confirmarDatos(user, password):
         correcto = False
 
     return correcto
+
+
+def nuevosDatos(user, password):
+    con = conectar()
+    c = con.cursor()
+    query = ("SELECT * FROM Usuarios WHERE Usuario = ?")
+    resultado = c.execute(query, [user])
+    usuario = resultado.fetchall()
+    if len(usuario) == 1:
+        mensaje = u"El usuario ya existe."
+    else:
+        if len(user.lstrip()) == 0:
+            mensaje = u"Usuario invalido.\nIngrese caracteres."
+        else:
+            if len(password.lstrip()) == 0:
+                mensaje = u"Contraseña invalida.\nIngrese caracteres."
+            else:
+                query = ("""INSERT INTO Usuarios (
+                    Usuario, Pass)
+                    VALUES (?, ?)""")
+                c.execute(query, [user, password])
+                con.commit()
+                mensaje = "Correcto"
+    con.close()
+
+    return mensaje
