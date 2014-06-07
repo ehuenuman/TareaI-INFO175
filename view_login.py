@@ -6,6 +6,7 @@ from PySide import QtGui
 from login_user import Ui_LoginUser
 import controller_user
 import tabla_productos
+import view_newuser
 
 
 class FormLoginUser (QtGui.QDialog):
@@ -39,7 +40,8 @@ class FormLoginUser (QtGui.QDialog):
             correctoQMessageBox.exec_()
 
     def nuevaCuenta(self):
-        pass
+        app = view_newuser.FormNewUser()
+        app.exec_()
 
 if __name__ == '__main__':
 

@@ -157,6 +157,7 @@ class TablaProductos(QtGui.QWidget):
         index = self.proxyView.currentIndex()
         if index.row() == -1:  # No se ha seleccionado una fila
             self.errorMessageDialog = QtGui.QErrorMessage(self)
+            self.errorMessageDialog.setWindowTitle("ERROR!!")
             self.errorMessageDialog.showMessage("Debe seleccionar una fila")
             return False
         else:
@@ -164,11 +165,13 @@ class TablaProductos(QtGui.QWidget):
             if (controller.delete(codigo)):
                 self.setSourceModel(self.loadData(self.tipoModel))
                 msgBox = QtGui.QMessageBox()
+                msgBox.setWindowTitle("FELICITACIONES!")
                 msgBox.setText("EL registro fue eliminado.")
                 msgBox.exec_()
                 return True
             else:
                 self.ui.errorMessageDialog = QtGui.QErrorMessage(self)
+                self.ui.errorMessageDialog.setWindowTitle("ERROR!!")
                 self.ui.errorMessageDialog.showMessage("""Error al eliminar el
                                                         registro""")
                 return False
