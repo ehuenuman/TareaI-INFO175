@@ -60,13 +60,6 @@ class TablaProductos(QtGui.QWidget):
         self.filtroBusquedaMarcaLabel = QtGui.QLabel(u"Seleccione marca:")
         self.filtroBusquedaMarcaComboBox = QtGui.QComboBox()
 
-        marcas = controller.obtener_marcas()
-        index = 1
-        self.filtroBusquedaMarcaComboBox.insertItem(0, u"Todas")
-        for i in range(len(marcas)):
-            self.filtroBusquedaMarcaComboBox.insertItem(index, marcas[i])
-            index = index + 1
-
         #Añadimos los Label, ComboBox y LineEdit al layout
         self.tb2_layout.addWidget(self.filtroBusquedaProductoLabel)
         self.tb2_layout.addWidget(self.filtroBusquedaProductoLineEdit)
@@ -74,6 +67,14 @@ class TablaProductos(QtGui.QWidget):
         self.tb2_layout.addWidget(self.filtroBusquedaMarcaComboBox)
 
         self.mainLayout.addWidget(self.toolbox2)
+
+    def llenarComboBox(self):
+        marcas = controller.obtener_marcas()
+        index = 1
+        self.filtroBusquedaMarcaComboBox.insertItem(0, u"Todas")
+        for i in range(len(marcas)):
+            self.filtroBusquedaMarcaComboBox.insertItem(index, marcas[i])
+            index = index + 1
 
     def renderProxyTable(self):
         producto = controller.obtener_productos()
@@ -102,7 +103,8 @@ class TablaProductos(QtGui.QWidget):
 
     def setSourceModel(self, model):
         self.proxyModel.setSourceModel(model)
-        #self.proxyView.setModel(model)
+        producto = controller.obtener_productos()
+        self.proxyGroupBox.setTitle(u"Total Productos: {0}".format(len(producto)))
 
         self.proxyView.setColumnWidth(0, 80)
         self.proxyView.setColumnWidth(1, 160)
@@ -110,6 +112,8 @@ class TablaProductos(QtGui.QWidget):
         self.proxyView.setColumnWidth(3, 100)
         self.proxyView.setColumnWidth(4, 120)
         self.proxyView.setColumnWidth(5, 90)
+
+        self.llenarComboBox()
 
     def loadData(self, parent):
         self.tipoModel = parent
@@ -123,6 +127,7 @@ class TablaProductos(QtGui.QWidget):
         self.model.setHorizontalHeaderItem(4, QtGui.QStandardItem(u"Precio"))
         self.model.setHorizontalHeaderItem(5, QtGui.QStandardItem(u"Marca"))
 
+        self.filtroBusquedaMarcaComboBox.clear()
         marcas = controller.obtener_marcas()
 
         r = 0
