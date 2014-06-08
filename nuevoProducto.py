@@ -65,8 +65,8 @@ class Ui_nuevoProducto(object):
 
     def retranslateUi(self, nuevoProducto):
         nuevoProducto.setWindowTitle(QtGui.QApplication.translate("nuevoProducto", " ", None, QtGui.QApplication.UnicodeUTF8))
-        self.Btn_add.setText(QtGui.QApplication.translate("nuevoProducto", "Agregar", None, QtGui.QApplication.UnicodeUTF8))
-        self.Btn_cancel.setText(QtGui.QApplication.translate("nuevoProducto", "Cancelar", None, QtGui.QApplication.UnicodeUTF8))
+        self.Btn_add.setText(QtGui.QApplication.translate("nuevoProducto", "&Agregar", None, QtGui.QApplication.UnicodeUTF8))
+        self.Btn_cancel.setText(QtGui.QApplication.translate("nuevoProducto", "&Cancelar", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("nuevoProducto", "Codigo", None, QtGui.QApplication.UnicodeUTF8))
         self.label_2.setText(QtGui.QApplication.translate("nuevoProducto", "Nombre", None, QtGui.QApplication.UnicodeUTF8))
         self.label_3.setText(QtGui.QApplication.translate("nuevoProducto", "Descripcion", None, QtGui.QApplication.UnicodeUTF8))
@@ -76,4 +76,3 @@ class Ui_nuevoProducto(object):
         self.label_7.setToolTip(QtGui.QApplication.translate("nuevoProducto", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">Formulario</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.label_7.setWhatsThis(QtGui.QApplication.translate("nuevoProducto", "<html><head/><body><p align=\"center\"><br/></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.label_7.setText(QtGui.QApplication.translate("nuevoProducto", "Formulario", None, QtGui.QApplication.UnicodeUTF8))
-
