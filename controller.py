@@ -5,12 +5,17 @@ import sqlite3
 
 
 def conectar():
+    """Funcion que conecta la base de datos
+    y retorna el conector
+    @return con"""
     con = sqlite3.connect('EmpresaDistribuidora.db')
     con.row_factory = sqlite3.Row
     return con
 
 
 def obtener_productos():
+    """Funcion que retorna la informacion de la tabla productos
+    @return productos"""
     con = conectar()
     c = con.cursor()
     query = "SELECT * FROM productos"
@@ -21,6 +26,9 @@ def obtener_productos():
 
 
 def obtener_marcas():
+    """Funcion que retorna el nombre de la marca
+    en la tabla marcas
+    @return temp_marcas"""
     con = conectar()
     c = con.cursor()
     query = "SELECT nombre FROM marcas"
@@ -32,6 +40,10 @@ def obtener_marcas():
 
 
 def obtener_datosProducto(index):
+    """Funcion que retorna los datos de un producto
+    segun su codigo
+    @param index
+    @return datos_productos"""
     con = conectar()
     c = con.cursor()
     query = """SELECT nombre, descripcion, color, precio, fk_id_marca
@@ -48,6 +60,11 @@ def obtener_datosProducto(index):
 
 
 def ingresar_producto(valores):
+    """Funcion que ingresa un producto en la
+    base de datos y retorna falso en caso
+    contrario
+    @param valores
+    @return False"""
     con = conectar()
     c = con.cursor()
     query = """INSERT INTO productos (
@@ -62,6 +79,9 @@ def ingresar_producto(valores):
 
 
 def ingresar_marca(id_marca, nueva_marca):
+    """Funcion que ingresa una marca en
+    la base de datos
+    @param id_marca,nueva_marca"""
     con = conectar()
     c = con.cursor()
 
@@ -75,6 +95,11 @@ def ingresar_marca(id_marca, nueva_marca):
 
 
 def update(codigo, valores):
+    """Funcion que edita un valor en la
+    base de datos y retorna una variable
+    booleana
+    @param codigo,valores
+    @return exito"""
     exito = False
     con = conectar()
     c = con.cursor()
@@ -100,6 +125,11 @@ def update(codigo, valores):
 
 
 def delete(codigo):
+    """Funcion que elimina un producto de la
+    base de datos segun su codigo y retorna
+    una variable booleana
+    @param codigo
+    @return exito"""
     exito = False
     con = conectar()
     c = con.cursor()
