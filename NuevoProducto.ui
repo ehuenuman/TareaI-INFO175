@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>110</x>
-     <y>430</y>
+     <y>450</y>
      <width>95</width>
      <height>31</height>
     </rect>
@@ -30,7 +30,7 @@
    <property name="geometry">
     <rect>
      <x>250</x>
-     <y>430</y>
+     <y>450</y>
      <width>95</width>
      <height>31</height>
     </rect>
@@ -43,7 +43,7 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>40</y>
+     <y>60</y>
      <width>67</width>
      <height>31</height>
     </rect>
@@ -56,7 +56,7 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>80</y>
+     <y>100</y>
      <width>67</width>
      <height>31</height>
     </rect>
@@ -69,7 +69,7 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>120</y>
+     <y>140</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -82,7 +82,7 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>230</y>
+     <y>250</y>
      <width>67</width>
      <height>31</height>
     </rect>
@@ -95,7 +95,7 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>270</y>
+     <y>290</y>
      <width>67</width>
      <height>31</height>
     </rect>
@@ -108,7 +108,7 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>310</y>
+     <y>330</y>
      <width>67</width>
      <height>31</height>
     </rect>
@@ -121,27 +121,33 @@
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>40</y>
+     <y>60</y>
      <width>113</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhNone</set>
    </property>
   </widget>
   <widget class="QLineEdit" name="nombre">
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>80</y>
+     <y>100</y>
      <width>113</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhNone</set>
    </property>
   </widget>
   <widget class="QLineEdit" name="color">
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>230</y>
+     <y>250</y>
      <width>113</width>
      <height>31</height>
     </rect>
@@ -151,7 +157,7 @@
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>270</y>
+     <y>290</y>
      <width>113</width>
      <height>31</height>
     </rect>
@@ -161,7 +167,7 @@
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>310</y>
+     <y>330</y>
      <width>113</width>
      <height>31</height>
     </rect>
@@ -171,7 +177,7 @@
    <property name="geometry">
     <rect>
      <x>136</x>
-     <y>350</y>
+     <y>370</y>
      <width>81</width>
      <height>61</height>
     </rect>
@@ -197,7 +203,7 @@
    <property name="geometry">
     <rect>
      <x>250</x>
-     <y>260</y>
+     <y>280</y>
      <width>180</width>
      <height>150</height>
     </rect>
@@ -225,17 +231,23 @@
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>120</y>
+     <y>140</y>
      <width>200</width>
      <height>100</height>
     </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Sunken</enum>
    </property>
   </widget>
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
      <x>380</x>
-     <y>240</y>
+     <y>260</y>
      <width>67</width>
      <height>21</height>
     </rect>
@@ -254,7 +266,7 @@
    <property name="geometry">
     <rect>
      <x>250</x>
-     <y>250</y>
+     <y>270</y>
      <width>118</width>
      <height>3</height>
     </rect>
@@ -267,7 +279,7 @@
    <property name="geometry">
     <rect>
      <x>400</x>
-     <y>370</y>
+     <y>390</y>
      <width>40</width>
      <height>40</height>
     </rect>
@@ -292,14 +304,23 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>10</x>
      <y>10</y>
-     <width>391</width>
-     <height>21</height>
+     <width>441</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cantarell</family>
+     <pointsize>12</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Complete el formulario y confirme para guardar los datos.</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
  </widget>
