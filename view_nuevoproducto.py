@@ -10,6 +10,7 @@ from nuevoProducto import Ui_nuevoProducto
 
 class Form (QtGui.QDialog):
     def __init__(self, code=None, parent=None):
+        """constructor del formulario nuevo producto"""
         QtGui.QDialog.__init__(self, parent)
         self.codi = code
         self.direccion_imagen = None
@@ -28,9 +29,11 @@ class Form (QtGui.QDialog):
             self.edit.imagenButton.clicked.connect(self.examinarImagen)
 
     def cancel(self):
+        """Funcion que cierra el formulario"""
         self.reject()
 
     def add_valores(self):
+        """Funcion que agrega los valores del formulario a la base de datos"""
         cod = (self.ui.codigo.text())
         nom = (self.ui.nombre.text())
         des = (self.ui.descripcion.toPlainText())
@@ -65,6 +68,9 @@ class Form (QtGui.QDialog):
             self.mensajeError(ingreso_valido)
 
     def llenarFormEditar(self, datos):
+        """Funcion que llena el formulario editar
+        con los campos del datos presionado
+        @param datos"""
         self.edit.codigo.setText(datos[0])
         self.edit.nombre.setText(datos[1])
         self.edit.descripcion.setPlainText(datos[2])
@@ -86,6 +92,7 @@ class Form (QtGui.QDialog):
                 self.edit.limpiarLabel()
 
     def edit_valores(self):
+        """Funcion que edita los elementos en la base de datos del formulario"""
         cod = (self.edit.codigo.text())
         nom = (self.edit.nombre.text())
         des = (self.edit.descripcion.toPlainText())
@@ -115,6 +122,10 @@ class Form (QtGui.QDialog):
             self.mensajeError(ingreso_valido)
 
     def validar(self, cod, nom, des, col, pre, mar):
+        """Funcion que valida los elementos del formulario
+        y retorna un mensaje
+        @param cod,nom,des,col,pre,mar
+        @return mensaje"""
         valido0 = cod.isalnum()
         valido1 = nom.strip()
         valido2 = des.strip()
@@ -138,12 +149,15 @@ class Form (QtGui.QDialog):
         return True
 
     def mensajeError(self, mensaje):
+        """Funcion que muestra en pantalla un mensaje de error
+        @param mensaje"""
         correctoQMessageBox = QtGui.QMessageBox()
         correctoQMessageBox.setWindowTitle("ERROR!")
         correctoQMessageBox.setText(mensaje)
         correctoQMessageBox.exec_()
 
     def examinarImagen(self):
+        """Funcion que valida la imagen"""
         nueva_imagen = QtGui.QFileDialog.getOpenFileNames(self,
             "Abrir Imagenes", '', "Imagenes (*.png *.xpm *.jpg)")
             #";;All Files (*)")
@@ -162,6 +176,8 @@ class Form (QtGui.QDialog):
             pass
 
     def almacenarImagen(self, origen_imagen, nuevo_nombre):
+        """Funcion que guarda la imagen
+        @param origen_imagen,nuevo_nombre"""
         info = os.path.splitext(origen_imagen)
         extencion = info[1]
         destino_imagen = "ImgProductos/{0}{1}".format(nuevo_nombre, extencion)
