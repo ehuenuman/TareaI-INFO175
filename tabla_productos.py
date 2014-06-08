@@ -3,6 +3,7 @@
 from PySide import QtCore, QtGui
 import sys
 import controller
+import view_form
 
 
 class TablaProductos(QtGui.QWidget):
@@ -62,8 +63,8 @@ class TablaProductos(QtGui.QWidget):
         marcas = controller.obtener_marcas()
         index = 1
         self.filtroBusquedaMarcaComboBox.insertItem(0, u"Todas")
-        for row in marcas:
-            self.filtroBusquedaMarcaComboBox.insertItem(index, row["nombre"])
+        for i in range(len(marcas)):
+            self.filtroBusquedaMarcaComboBox.insertItem(index, marcas[i])
             index = index + 1
 
         #Añadimos los Label, ComboBox y LineEdit al layout
@@ -123,7 +124,6 @@ class TablaProductos(QtGui.QWidget):
         self.model.setHorizontalHeaderItem(5, QtGui.QStandardItem(u"Marca"))
 
         marcas = controller.obtener_marcas()
-        temp_marcas = [row["nombre"] for row in marcas]
 
         r = 0
         for row in producto:
@@ -138,12 +138,14 @@ class TablaProductos(QtGui.QWidget):
             index = self.model.index(r, 4, QtCore.QModelIndex())
             self.model.setData(index, row['precio'])
             index = self.model.index(r, 5, QtCore.QModelIndex())
-            self.model.setData(index, temp_marcas[row['fk_id_marca'] - 1])
+            self.model.setData(index, marcas[row['fk_id_marca'] - 1])
             r = r + 1
 
         return self.model
 
     def setSignals(self):
+        self.btn_add.clicked.connect(self.add)
+        self.btn_edit.clicked.connect(self.edit)
         self.btn_delete.clicked.connect(self.delete)
         self.filtroBusquedaProductoLineEdit.textChanged.connect(
             self.filtrarProductos
@@ -152,29 +154,79 @@ class TablaProductos(QtGui.QWidget):
             self.filtrarMarca
             )
 
-    def delete(self):
-        model = self.proxyView.model()
+    def add(self):
+        form = view_form.Form(self.code())
+        form.exec_()
+        self.setSourceModel(self.loadData(self.tipoModel))
+
+    def edit(self):
         index = self.proxyView.currentIndex()
         if index.row() == -1:  # No se ha seleccionado una fila
             self.errorMessageDialog = QtGui.QErrorMessage(self)
-            self.errorMessageDialog.setWindowTitle("ERROR!!")
+            self.errorMessageDialog.setWindowTitle("ERROR!")
             self.errorMessageDialog.showMessage("Debe seleccionar una fila")
-            return False
         else:
-            codigo = model.index(index.row(), 0, QtCore.QModelIndex()).data()
-            if (controller.delete(codigo)):
-                self.setSourceModel(self.loadData(self.tipoModel))
-                msgBox = QtGui.QMessageBox()
-                msgBox.setWindowTitle("FELICITACIONES!")
-                msgBox.setText("EL registro fue eliminado.")
-                msgBox.exec_()
-                return True
-            else:
-                self.ui.errorMessageDialog = QtGui.QErrorMessage(self)
-                self.ui.errorMessageDialog.setWindowTitle("ERROR!!")
-                self.ui.errorMessageDialog.showMessage("""Error al eliminar el
-                                                        registro""")
-                return False
+            datos_producto = controller.obtener_datosProducto(self.code())
+            form = view_form.Form(self.code())
+            form.llenarFormEditar(datos_producto)
+            form.exec_()
+            self.setSourceModel(self.loadData(self.tipoModel))
+
+    def code(self):
+        model = self.proxyView.model()
+        index = self.proxyView.currentIndex()
+        self.codi = model.index(index.row(), 0, QtCore.QModelIndex()).data()
+        return self.codi
+
+    def delete(self):
+        index = self.proxyView.currentIndex()
+        if index.row() == -1:  # No se ha seleccionado una fila
+            self.errorMessageDialog = QtGui.QErrorMessage(self)
+            self.errorMessageDialog.setWindowTitle("ERROR!")
+            self.errorMessageDialog.showMessage("Debe seleccionar una fila")
+        else:
+            #caracteristicas ventana mensaje
+            self.msg = QtGui.QWidget()
+            self.msg.resize(260, 100)
+            self.msg.setMinimumSize(260, 100)
+            self.msg.setMaximumSize(260, 100)
+            self.msg.setWindowTitle('Mensaje')
+            screen = QtGui.QDesktopWidget().screenGeometry()
+            size = self.msg.geometry()
+            self.msg.move(
+                (screen.width() - size.width()) / 2,
+                (screen.height() - size.height()) / 2
+                )
+
+            self.ms_layout = QtGui.QVBoxLayout()
+            self.men_label = QtGui.QLabel()
+            self.men_label.setText(u"¿Desea borrar de la base de datos?")
+            self.msg.setLayout(self.ms_layout)
+            self.btn_ok = QtGui.QPushButton(u"&Confirmar")
+            #Agregamos los botones  y label al layout
+            self.ms_layout.addWidget(self.men_label)
+            self.ms_layout.addWidget(self.btn_ok)
+
+            self.msg.show()
+
+            self.btn_ok.clicked.connect(self.borrar)
+
+    def borrar(self):
+        model = self.proxyView.model()
+        index = self.proxyView.currentIndex()
+        codigo = model.index(index.row(), 0, QtCore.QModelIndex()).data()
+        self.msg.close()
+        if (controller.delete(codigo)):
+            self.setSourceModel(self.loadData(self.tipoModel))
+            msgBox = QtGui.QMessageBox()
+            msgBox.setWindowTitle("Felicitaciones!")
+            msgBox.setText("EL registro fue eliminado.")
+            msgBox.exec_()
+
+        else:
+            self.ui.errorMessageDialog = QtGui.QErrorMessage(self)
+            self.ui.errorMessageDialog.showMessage("""Error al eliminar el
+                                                    registro""")
 
     def filtrarProductos(self):
         self.proxyModel.setFilterKeyColumn(1)
