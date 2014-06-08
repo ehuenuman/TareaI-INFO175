@@ -38,19 +38,20 @@ class Form (QtGui.QDialog):
         pre = (self.ui.precio.text())
         mar = (self.ui.marca.text())
 
-        ingreso_valido = self.validar(nom, des, col, pre, mar)
+        ingreso_valido = self.validar(cod, nom, des, col, pre, mar)
 
         if ingreso_valido is True:
             valores = [cod, nom, des, col, pre, mar]
 
             marcas = controller.obtener_marcas()
 
+            # Si la marca ya existe en la base de datos
             if valores[5] in marcas:
                 valores[5] = marcas.index(valores[5]) + 1
             else:
-                valores[5] = len(marcas) + 1
                 id_marca = len(marcas) + 1
                 controller.ingresar_marca(id_marca, valores[5])
+                valores[5] = id_marca
 
             exito = controller.ingresar_producto(valores)
             if exito is False:
@@ -84,57 +85,56 @@ class Form (QtGui.QDialog):
                 self.edit.limpiarLabel()
 
     def edit_valores(self):
-            cod = (self.edit.codigo.text())
-            nom = (self.edit.nombre.text())
-            des = (self.edit.descripcion.toPlainText())
-            col = (self.edit.color.text())
-            pre = (self.edit.precio.text())
-            mar = (self.edit.marca.text())
+        cod = (self.edit.codigo.text())
+        nom = (self.edit.nombre.text())
+        des = (self.edit.descripcion.toPlainText())
+        col = (self.edit.color.text())
+        pre = (self.edit.precio.text())
+        mar = (self.edit.marca.text())
 
-            ingreso_valido = self.validar(nom, des, col, pre, mar)
+        ingreso_valido = self.validar(cod, nom, des, col, pre, mar)
 
-            if ingreso_valido is True:
-                valores = [cod, nom, des, col, pre, mar]
+        if ingreso_valido is True:
+            valores = [cod, nom, des, col, pre, mar]
 
-                marcas = controller.obtener_marcas()
+            marcas = controller.obtener_marcas()
 
-                if valores[5] in marcas:
-                    valores[5] = marcas.index(valores[5]) + 1
-                else:
-                    valores[5] = len(marcas) + 1
-                    id_marca = len(marcas) + 1
-                    controller.ingresar_marca(id_marca, valores[5])
-
-                controller.update(self.codi, valores)
-                if self.direccion_imagen is not None:
-                    self.almacenarImagen(self.direccion_imagen, cod)
-                self.reject()
+            if valores[5] in marcas:
+                valores[5] = marcas.index(valores[5]) + 1
             else:
-                self.mensajeError(ingreso_valido)
+                id_marca = len(marcas) + 1
+                controller.ingresar_marca(id_marca, valores[5])
+                valores[5] = id_marca
 
-    def validar(self, nom, des, col, pre, mar):
-        valido = nom.replace(" ", "").isalnum()
-        valido2 = des.replace(" ", "").isalnum()
+            controller.update(self.codi, valores)
+            if self.direccion_imagen is not None:
+                self.almacenarImagen(self.direccion_imagen, cod)
+            self.reject()
+        else:
+            self.mensajeError(ingreso_valido)
+
+    def validar(self, cod, nom, des, col, pre, mar):
+        valido0 = cod.isalnum()
+        valido1 = nom.strip()
+        valido2 = des.strip()
         valido3 = col.replace(" ", "").isalpha()
         valido4 = pre.replace(" ", "").isdigit()
-        valido5 = mar.replace(" ", "").isalnum()
-
+        valido5 = mar.strip()
+        if len(valido1) == 0 or len(valido2) == 0 or len(valido5) == 0:
+            mensaje = u"""No se permiten casillas en blanco.
+                      \nIngrese los valores correspondiente y confirme."""
+            return mensaje
+        if valido0 is False:
+            mensaje = u"""Ingrese un código valido al producto.
+                      \nSolo estan permitidos caracteres AlfaNumericos."""
+            return mensaje
+        if valido3 is False:
+            mensaje = u"Color no valido.\nCorrija e intente nuevamente."
+            return mensaje
         if valido4 is False:
             mensaje = u"Precio no valido.\nCorrija e intente nuevamente."
             return mensaje
-        else:
-            if valido3 is False:
-                mensaje = u"Color no valido.\nCorrija e intente nuevamente."
-                return mensaje
-            else:
-                if valido is False or valido2 is False or valido5 is False:
-                    mensaje = u"Algunos campos fueron ingresados"
-                    mensaje = mensaje + " incorrectamente.\n"
-                    mensaje = mensaje + "Recuerde que no se permiten simbolos."
-                    mensaje = mensaje + "\nCorrija e intente nuevamente."
-                    return mensaje
-                else:
-                    return True
+        return True
 
     def mensajeError(self, mensaje):
         correctoQMessageBox = QtGui.QMessageBox()
