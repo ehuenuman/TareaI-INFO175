@@ -71,6 +71,7 @@ class Form (QtGui.QDialog):
         self.edit.color.setText(datos[3])
         self.edit.precio.setText(str(datos[4]))
         self.edit.marca.setText(datos[5])
+
         ficheros = os.listdir('ImgProductos/')
         fichero = datos[0] + ".jpg" in ficheros
         if fichero is True:
