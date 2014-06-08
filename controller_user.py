@@ -5,12 +5,20 @@ import sqlite3
 
 
 def conectar():
+    """Funcion que conecta a la base
+    de datos de los usuarios y retorna
+    un conector
+    @return con"""
     con = sqlite3.connect('DatosUsuario.db')
     con.row_factory = sqlite3.Row
     return con
 
 
 def confirmarDatos(user, password):
+    """Funcion que busca el usuario en
+    la base de datos y retorna un booleano
+    @param user,password
+    @return correcto"""
     con = conectar()
     c = con.cursor()
     query = ("SELECT * FROM Usuarios WHERE Usuario = ? AND Pass = ?")
@@ -27,6 +35,10 @@ def confirmarDatos(user, password):
 
 
 def nuevosDatos(user, password):
+    """Funcion que ingresa un nuevo usuario
+    en la base de datos y retorna un mensaje
+    @param user,password
+    @return mensaje"""
     con = conectar()
     c = con.cursor()
     query = ("SELECT * FROM Usuarios WHERE Usuario = ?")
