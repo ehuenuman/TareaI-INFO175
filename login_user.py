@@ -9,6 +9,7 @@
 
 from PySide import QtCore, QtGui
 
+
 class Ui_LoginUser(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Login User")
