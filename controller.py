@@ -54,8 +54,11 @@ def ingresar_producto(valores):
         codigo, nombre, descripcion,
         color, precio, fk_id_marca)
         VALUES (?,?,?,?,?,?)"""
-    c.execute(query, valores)
-    con.commit()
+    try:
+        c.execute(query, valores)
+        con.commit()
+    except sqlite3.IntegrityError:
+        return False
 
 
 def ingresar_marca(id_marca, nueva_marca):
