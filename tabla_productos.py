@@ -113,6 +113,7 @@ class TablaProductos(QtGui.QWidget):
         self.proxyView.setColumnWidth(4, 120)
         self.proxyView.setColumnWidth(5, 90)
 
+        self.filtroBusquedaMarcaComboBox.clear()
         self.llenarComboBox()
 
     def loadData(self, parent):
@@ -127,7 +128,6 @@ class TablaProductos(QtGui.QWidget):
         self.model.setHorizontalHeaderItem(4, QtGui.QStandardItem(u"Precio"))
         self.model.setHorizontalHeaderItem(5, QtGui.QStandardItem(u"Marca"))
 
-        self.filtroBusquedaMarcaComboBox.clear()
         marcas = controller.obtener_marcas()
 
         r = 0
