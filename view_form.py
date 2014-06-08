@@ -14,7 +14,7 @@ class Form (QtGui.QDialog):
             self.ui = Ui_nuevoProducto()
             self.ui.setupUi(self)
             self.ui.Btn_add.clicked.connect(self.add_valores)
-            self.ui.Btn_cancel.clicked.connect(self.add)
+            self.ui.Btn_cancel.clicked.connect(self.cancel)
         else:
             self.edit = Ui_nuevoProducto()
             self.edit.setupUi(self)
@@ -25,73 +25,98 @@ class Form (QtGui.QDialog):
         self.reject()
 
     def add_valores(self):
-        self.cod = (self.ui.codigo.text())
-        self.nom = (self.ui.nombre.text())
-        self.des = (self.ui.descripcion.text())
-        self.col = (self.ui.color.text())
-        self.pre = (self.ui.precio.text())
-        self.mar = (self.ui.marca.text())
+        cod = (self.ui.codigo.text())
+        nom = (self.ui.nombre.text())
+        des = (self.ui.descripcion.text())
+        col = (self.ui.color.text())
+        pre = (self.ui.precio.text())
+        mar = (self.ui.marca.text())
 
-        valido = self.nom.isalpha()
-        valido2 = self.des.isalpha()
-        valido3 = self.col.isalpha()
-        valido4 = self.pre.isdigit()
-        valido5 = self.mar.isalpha()
-        if(valido is False or valido2 is False or valido3 is False or valido4 is False or valido5 is False):
-            correctoQMessageBox = QtGui.QMessageBox()
-            correctoQMessageBox.setWindowTitle("ERROR!")
-            correctoQMessageBox.setText(u"""Campo ingresado incorrectamente.
-                                        \nIntente nuevamente!""")
-            correctoQMessageBox.exec_()
-        else:
-            self.valores = [self.cod, self.nom, self.des, self.col, self.pre, self.mar]
+        ingreso_valido = self.validar(nom, des, col, pre, mar)
+
+        if ingreso_valido is True:
+            valores = [cod, nom, des, col, pre, mar]
 
             marcas = controller.obtener_marcas()
-            temp_marcas = [row["nombre"] for row in marcas]
 
-            if self.valores[5] in temp_marcas:
-                self.valores[5] = temp_marcas.index(self.valores[5]) + 1
+            if valores[5] in marcas:
+                valores[5] = marcas.index(valores[5]) + 1
             else:
-                self.valores[5] = len(marcas) + 1
+                valores[5] = len(marcas) + 1
                 id_marca = len(marcas) + 1
-                controller.ingresar_marca(id_marca, self.valores[5])
+                controller.ingresar_marca(id_marca, valores[5])
 
-            controller.ingresar_producto(self.valores)
-
+            controller.ingresar_producto(valores)
             self.reject()
+        else:
+            self.mensajeError(ingreso_valido)
+
+    def llenarFormEditar(self, datos):
+        self.edit.codigo.setText(datos[0])
+        self.edit.nombre.setText(datos[1])
+        self.edit.descripcion.setText(datos[2])
+        self.edit.color.setText(datos[3])
+        self.edit.precio.setText(str(datos[4]))
+        self.edit.marca.setText(datos[5])
 
     def edit_valores(self):
-            self.cod = (self.edit.codigo.text())
-            self.nom = (self.edit.nombre.text())
-            self.des = (self.edit.descripcion.text())
-            self.col = (self.edit.color.text())
-            self.pre = (self.edit.precio.text())
-            self.mar = (self.edit.marca.text())
+            cod = (self.edit.codigo.text())
+            nom = (self.edit.nombre.text())
+            des = (self.edit.descripcion.text())
+            col = (self.edit.color.text())
+            pre = (self.edit.precio.text())
+            mar = (self.edit.marca.text())
 
-            valido = self.nom.isalpha()
-            valido2 = self.des.isalpha()
-            valido3 = self.col.isalpha()
-            valido4 = self.pre.isdigit()
-            valido5 = self.mar.isalpha()
-            if(valido is False or valido2 is False or valido3 is False or valido4 is False or valido5 is False):
-                correctoQMessageBox = QtGui.QMessageBox()
-                correctoQMessageBox.setWindowTitle("ERROR!")
-                correctoQMessageBox.setText(u"""Campo ingresado incorrectamente.
-                                            \nIntente nuevamente!""")
-                correctoQMessageBox.exec_()
-            else:
-                self.valores = [self.cod, self.nom, self.des, self.col, self.pre, self.mar]
+            ingreso_valido = self.validar(nom, des, col, pre, mar)
+
+            if ingreso_valido is True:
+                valores = [cod, nom, des, col, pre, mar]
 
                 marcas = controller.obtener_marcas()
-                temp_marcas = [row["nombre"] for row in marcas]
 
-                if self.valores[5] in temp_marcas:
-                    self.valores[5] = temp_marcas.index(self.valores[5]) + 1
+                if valores[5] in marcas:
+                    valores[5] = marcas.index(valores[5]) + 1
                 else:
-                    self.valores[5] = len(marcas) + 1
+                    valores[5] = len(marcas) + 1
                     id_marca = len(marcas) + 1
-                    controller.ingresar_marca(id_marca, self.valores[5])
+                    controller.ingresar_marca(id_marca, valores[5])
 
-                controller.update(self.codi,self.valores)
-
+                controller.update(self.codi, valores)
                 self.reject()
+            else:
+                self.mensajeError(ingreso_valido)
+
+    def validar(self, nom, des, col, pre, mar):
+        valido = nom.replace(" ", "").isalnum()
+        valido2 = des.replace(" ", "").isalnum()
+        valido3 = col.replace(" ", "").isalpha()
+        valido4 = pre.replace(" ", "").isdigit()
+        valido5 = mar.replace(" ", "").isalnum()
+
+        if valido4 is False:
+            mensaje = u"Precio no valido.\nCorrija e intente nuevamente."
+            return mensaje
+        else:
+            if valido3 is False:
+                mensaje = u"Color no valido.\nCorrija e intente nuevamente."
+                return mensaje
+            else:
+                if valido is False or valido2 is False or valido5 is False:
+                    mensaje = u"""Algunos campos fueron ingresados
+                              incorrectamente.\nCorrija e intente nuevamente."""
+                    return mensaje
+                else:
+                    return True
+
+    def mensajeError(self, mensaje):
+        correctoQMessageBox = QtGui.QMessageBox()
+        correctoQMessageBox.setWindowTitle("ERROR!")
+        correctoQMessageBox.setText(mensaje)
+        correctoQMessageBox.exec_()
+
+if __name__ == '__main__':
+    import sys
+    app = QtGui.QApplication(sys.argv)
+    main_window = Form()
+    main_window.show()
+    sys.exit(app.exec_())
