@@ -27,17 +27,24 @@ def obtener_marcas():
     resultado = c.execute(query)
     marcas = resultado.fetchall()
     con.close()
-    return marcas
+    temp_marcas = [row["nombre"] for row in marcas]
+    return temp_marcas
 
 
 def obtener_datosProducto(index):
     con = conectar()
     c = con.cursor()
-    query = """SELECT * FROM productos WHERE codigo = ?"""
+    query = """SELECT nombre, descripcion, color, precio, fk_id_marca
+            FROM productos WHERE codigo = ?"""
     resultado = c.execute(query, [index])
     producto = resultado.fetchall()
     con.close()
-    print producto
+    for row in producto:
+        datos_producto = [index, row[0], row[1], row[2], row[3], row[4]]
+    marcas = obtener_marcas()
+    datos_producto[5] = marcas[datos_producto[5] - 1]
+
+    return datos_producto
 
 
 def ingresar_producto(valores):
