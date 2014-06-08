@@ -12,6 +12,8 @@ from PySide import QtCore, QtGui
 
 class Ui_nuevoProducto(object):
     def setupUi(self, nuevoProducto):
+        """Constructor principal del formulario nuevo producto
+        @param nuevoProducto"""
         nuevoProducto.setObjectName("nuevoProducto")
         nuevoProducto.resize(458, 490)
         self.Btn_add = QtGui.QPushButton(nuevoProducto)
@@ -112,16 +114,24 @@ class Ui_nuevoProducto(object):
         QtCore.QMetaObject.connectSlotsByName(nuevoProducto)
 
     def setImageLabel(self, direccion):
-            self.imagenLabel.setPixmap(QtGui.QPixmap(direccion))
+        """Funcion que asigna una imagen
+        @param direccion"""
+        self.imagenLabel.setPixmap(QtGui.QPixmap(direccion))
 
     def limpiarLabel(self):
+        """Funcion que limpia el label de la imagen"""
         self.imagenLabel.setPixmap(QtGui.QPixmap("ImgProductos/No Imagen.png"))
 
     def setEdit(self, nuevoProducto):
+        """Funcion que asigna un texto a la ventana principal
+        y un texto al boton guardar en el formulario
+        @param nuevoProducto"""
         nuevoProducto.setWindowTitle("Editar Producto")
         self.Btn_add.setText("&Guardar")
 
     def retranslateUi(self, nuevoProducto):
+        """Funcion que asigna los textos a los elementos del formulario nuevo producto
+        @param nuevoProducto"""
         nuevoProducto.setWindowTitle(QtGui.QApplication.translate("nuevoProducto", "Nuevo Producto", None, QtGui.QApplication.UnicodeUTF8))
         self.Btn_add.setText(QtGui.QApplication.translate("nuevoProducto", "&Agregar", None, QtGui.QApplication.UnicodeUTF8))
         self.Btn_cancel.setText(QtGui.QApplication.translate("nuevoProducto", "&Cancelar", None, QtGui.QApplication.UnicodeUTF8))
