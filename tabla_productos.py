@@ -3,7 +3,7 @@
 from PySide import QtCore, QtGui
 import sys
 import controller
-import view_form
+import view_nuevoproducto
 
 
 class TablaProductos(QtGui.QWidget):
@@ -155,7 +155,7 @@ class TablaProductos(QtGui.QWidget):
             )
 
     def add(self):
-        form = view_form.Form(self.code())
+        form = view_nuevoproducto.Form(self.code())
         form.exec_()
         self.setSourceModel(self.loadData(self.tipoModel))
 
@@ -167,7 +167,7 @@ class TablaProductos(QtGui.QWidget):
             self.errorMessageDialog.showMessage("Debe seleccionar una fila")
         else:
             datos_producto = controller.obtener_datosProducto(self.code())
-            form = view_form.Form(self.code())
+            form = view_nuevoproducto.Form(self.code())
             form.llenarFormEditar(datos_producto)
             form.exec_()
             self.setSourceModel(self.loadData(self.tipoModel))
