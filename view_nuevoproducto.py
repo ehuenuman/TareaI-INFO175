@@ -27,6 +27,7 @@ class Form (QtGui.QDialog):
             self.edit.Btn_add.clicked.connect(self.edit_valores)
             self.edit.Btn_cancel.clicked.connect(self.cancel)
             self.edit.imagenButton.clicked.connect(self.examinarImagen)
+            self.edit.borrarImagenButton.clicked.connect(self.borraImagen)
 
     def cancel(self):
         """Funcion que cierra el formulario"""
@@ -89,7 +90,16 @@ class Form (QtGui.QDialog):
                 direccion = 'ImgProductos/{0}'.format(datos[0] + ".png")
                 self.edit.setImageLabel(direccion)
             else:
+                direccion = ""
                 self.edit.limpiarLabel()
+        self.fich = direccion
+        return self.fich
+
+    def borraImagen(self):
+        """Funcion que borra la imagen de la carpeta"""
+        print self.fich
+        os.remove(self.fich)
+
 
     def edit_valores(self):
         """Funcion que edita los elementos en la base de datos del formulario"""
