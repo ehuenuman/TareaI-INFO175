@@ -100,7 +100,6 @@ class Form (QtGui.QDialog):
         print self.fich
         os.remove(self.fich)
 
-
     def edit_valores(self):
         """Funcion que edita los elementos en la base de datos del formulario"""
         cod = (self.edit.codigo.text())
@@ -169,7 +168,7 @@ class Form (QtGui.QDialog):
     def examinarImagen(self):
         """Funcion que valida la imagen"""
         nueva_imagen = QtGui.QFileDialog.getOpenFileNames(self,
-            "Abrir Imagenes", '', "Imagenes (*.png *.xpm *.jpg)")
+            "Abrir Imagenes", '', "Imagenes (*.png *.jpg)")
             #";;All Files (*)")
 
         try:
