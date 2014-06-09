@@ -11,6 +11,7 @@ import view_newuser
 
 class FormLoginUser (QtGui.QDialog):
     def __init__(self, parent=None):
+        """Constructor del formulario usuarios"""
         QtGui.QDialog.__init__(self, parent)
         self.ui = Ui_LoginUser()
         self.ui.setupUi(self)
@@ -19,6 +20,7 @@ class FormLoginUser (QtGui.QDialog):
         self.ui.nuevaCuentaButton.clicked.connect(self.nuevaCuenta)
 
     def checkIngreso(self):
+        """Funcion que valida el ingreso de un usuario"""
         usuario = self.ui.usuarioLineEdit.text()
         password = self.ui.passLineEdit.text()
         correcto = controller_user.confirmarDatos(usuario, password)
@@ -40,6 +42,7 @@ class FormLoginUser (QtGui.QDialog):
             correctoQMessageBox.exec_()
 
     def nuevaCuenta(self):
+        """Funcion que llama al formualrio de nuevo usuario"""
         app = view_newuser.FormNewUser()
         app.exec_()
 

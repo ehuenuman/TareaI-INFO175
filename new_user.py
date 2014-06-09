@@ -12,6 +12,8 @@ from PySide import QtCore, QtGui
 
 class Ui_NewUser(object):
     def setupUi(self, Dialog):
+        """Constructor del formulario nuevo usuario
+        @param Dialog"""
         Dialog.setObjectName("NewUser")
         Dialog.resize(320, 195)
         self.usuarioLineEdit = QtGui.QLineEdit(Dialog)
@@ -49,9 +51,14 @@ class Ui_NewUser(object):
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def closeDialog(self, Dialog):
+        """Funcion que cierra el formulario nuevo usuario
+        @param Dialog"""
         Dialog.close()
 
     def retranslateUi(self, Dialog):
+        """Funcion que asigna los textos a los elementos del
+        formulario nuevo usuario
+        @param Dialog"""
         Dialog.setWindowTitle(QtGui.QApplication.translate("Dialog", "Nuevo Usuario", None, QtGui.QApplication.UnicodeUTF8))
         self.usuarioLabel.setText(QtGui.QApplication.translate("Dialog", "Usuario:", None, QtGui.QApplication.UnicodeUTF8))
         self.passLabel.setText(QtGui.QApplication.translate("Dialog", "Contraseña:", None, QtGui.QApplication.UnicodeUTF8))

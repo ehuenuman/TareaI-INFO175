@@ -1,0 +1,785 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module view_nuevoproducto</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>view_nuevoproducto</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/xelbol/Info-175/TareaI-INFO175/view_nuevoproducto.py">/home/xelbol/Info-175/TareaI-INFO175/view_nuevoproducto.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="PySide.QtGui.html">PySide.QtGui</a><br>
+</td><td width="25%" valign=top><a href="controller.html">controller</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="shutil.html">shutil</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="PySide.QtGui.html#QDialog">PySide.QtGui.QDialog</a>(<a href="PySide.QtGui.html#QWidget">PySide.QtGui.QWidget</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="view_nuevoproducto.html#Form">Form</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Form">class <strong>Form</strong></a>(<a href="PySide.QtGui.html#QDialog">PySide.QtGui.QDialog</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="view_nuevoproducto.html#Form">Form</a></dd>
+<dd><a href="PySide.QtGui.html#QDialog">PySide.QtGui.QDialog</a></dd>
+<dd><a href="PySide.QtGui.html#QWidget">PySide.QtGui.QWidget</a></dd>
+<dd><a href="PySide.QtCore.html#QObject">PySide.QtCore.QObject</a></dd>
+<dd><a href="PySide.QtGui.html#QPaintDevice">PySide.QtGui.QPaintDevice</a></dd>
+<dd>Shiboken.Object</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Form-__init__"><strong>__init__</strong></a>(self, code<font color="#909090">=None</font>, parent<font color="#909090">=None</font>)</dt><dd><tt>constructor&nbsp;del&nbsp;formulario&nbsp;nuevo&nbsp;producto</tt></dd></dl>
+
+<dl><dt><a name="Form-add_valores"><strong>add_valores</strong></a>(self)</dt><dd><tt>Funcion&nbsp;que&nbsp;agrega&nbsp;los&nbsp;valores&nbsp;del&nbsp;formulario&nbsp;a&nbsp;la&nbsp;base&nbsp;de&nbsp;datos</tt></dd></dl>
+
+<dl><dt><a name="Form-almacenarImagen"><strong>almacenarImagen</strong></a>(self, origen_imagen, nuevo_nombre)</dt><dd><tt>Funcion&nbsp;que&nbsp;guarda&nbsp;la&nbsp;imagen<br>
+@param&nbsp;origen_imagen,nuevo_nombre</tt></dd></dl>
+
+<dl><dt><a name="Form-borraImagen"><strong>borraImagen</strong></a>(self)</dt><dd><tt>Funcion&nbsp;que&nbsp;borra&nbsp;la&nbsp;imagen&nbsp;de&nbsp;la&nbsp;carpeta</tt></dd></dl>
+
+<dl><dt><a name="Form-cancel"><strong>cancel</strong></a>(self)</dt><dd><tt>Funcion&nbsp;que&nbsp;cierra&nbsp;el&nbsp;formulario</tt></dd></dl>
+
+<dl><dt><a name="Form-edit_valores"><strong>edit_valores</strong></a>(self)</dt><dd><tt>Funcion&nbsp;que&nbsp;edita&nbsp;los&nbsp;elementos&nbsp;en&nbsp;la&nbsp;base&nbsp;de&nbsp;datos&nbsp;del&nbsp;formulario</tt></dd></dl>
+
+<dl><dt><a name="Form-examinarImagen"><strong>examinarImagen</strong></a>(self)</dt><dd><tt>Funcion&nbsp;que&nbsp;valida&nbsp;la&nbsp;imagen</tt></dd></dl>
+
+<dl><dt><a name="Form-llenarFormEditar"><strong>llenarFormEditar</strong></a>(self, datos)</dt><dd><tt>Funcion&nbsp;que&nbsp;llena&nbsp;el&nbsp;formulario&nbsp;editar<br>
+con&nbsp;los&nbsp;campos&nbsp;del&nbsp;datos&nbsp;presionado<br>
+@param&nbsp;datos</tt></dd></dl>
+
+<dl><dt><a name="Form-mensajeError"><strong>mensajeError</strong></a>(self, mensaje)</dt><dd><tt>Funcion&nbsp;que&nbsp;muestra&nbsp;en&nbsp;pantalla&nbsp;un&nbsp;mensaje&nbsp;de&nbsp;error<br>
+@param&nbsp;mensaje</tt></dd></dl>
+
+<dl><dt><a name="Form-validar"><strong>validar</strong></a>(self, cod, nom, des, col, pre, mar)</dt><dd><tt>Funcion&nbsp;que&nbsp;valida&nbsp;los&nbsp;elementos&nbsp;del&nbsp;formulario<br>
+y&nbsp;retorna&nbsp;un&nbsp;mensaje<br>
+@param&nbsp;cod,nom,des,col,pre,mar<br>
+@return&nbsp;mensaje</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>staticMetaObject</strong> = &lt;PySide.QtCore.QMetaObject object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="PySide.QtGui.html#QDialog">PySide.QtGui.QDialog</a>:<br>
+<dl><dt><a name="Form-accept"><strong>accept</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-adjustPosition"><strong>adjustPosition</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-closeEvent"><strong>closeEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-contextMenuEvent"><strong>contextMenuEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-done"><strong>done</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-eventFilter"><strong>eventFilter</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-exec_"><strong>exec_</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-isSizeGripEnabled"><strong>isSizeGripEnabled</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-keyPressEvent"><strong>keyPressEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-minimumSizeHint"><strong>minimumSizeHint</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-open"><strong>open</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-reject"><strong>reject</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-resizeEvent"><strong>resizeEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-result"><strong>result</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setModal"><strong>setModal</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setResult"><strong>setResult</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setSizeGripEnabled"><strong>setSizeGripEnabled</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setVisible"><strong>setVisible</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-showEvent"><strong>showEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-sizeHint"><strong>sizeHint</strong></a>(...)</dt></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PySide.QtGui.html#QDialog">PySide.QtGui.QDialog</a>:<br>
+<dl><dt><strong>Accepted</strong> = PySide.QtGui.QDialog.DialogCode.Accepted</dl>
+
+<dl><dt><strong>DialogCode</strong> = &lt;type 'PySide.QtGui.QDialog.DialogCode'&gt;</dl>
+
+<dl><dt><strong>Rejected</strong> = PySide.QtGui.QDialog.DialogCode.Rejected</dl>
+
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of Shiboken.ObjectType object&gt;<dd><tt>T.<a href="#Form-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;object&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<dl><dt><strong>accepted</strong> = &lt;PySide.QtCore.Signal object&gt;<dd><tt>Signal</tt></dl>
+
+<dl><dt><strong>finished</strong> = &lt;PySide.QtCore.Signal object&gt;<dd><tt>Signal</tt></dl>
+
+<dl><dt><strong>rejected</strong> = &lt;PySide.QtCore.Signal object&gt;<dd><tt>Signal</tt></dl>
+
+<hr>
+Methods inherited from <a href="PySide.QtGui.html#QWidget">PySide.QtGui.QWidget</a>:<br>
+<dl><dt><a name="Form-acceptDrops"><strong>acceptDrops</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-accessibleDescription"><strong>accessibleDescription</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-accessibleName"><strong>accessibleName</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-actionEvent"><strong>actionEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-actions"><strong>actions</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-activateWindow"><strong>activateWindow</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-addAction"><strong>addAction</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-addActions"><strong>addActions</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-adjustSize"><strong>adjustSize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-autoFillBackground"><strong>autoFillBackground</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-backgroundRole"><strong>backgroundRole</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-baseSize"><strong>baseSize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-changeEvent"><strong>changeEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-childAt"><strong>childAt</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-childrenRect"><strong>childrenRect</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-childrenRegion"><strong>childrenRegion</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-clearFocus"><strong>clearFocus</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-clearMask"><strong>clearMask</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-close"><strong>close</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-contentsMargins"><strong>contentsMargins</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-contentsRect"><strong>contentsRect</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-contextMenuPolicy"><strong>contextMenuPolicy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-createWinId"><strong>createWinId</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-cursor"><strong>cursor</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-destroy"><strong>destroy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-devType"><strong>devType</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-dragEnterEvent"><strong>dragEnterEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-dragLeaveEvent"><strong>dragLeaveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-dragMoveEvent"><strong>dragMoveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-dropEvent"><strong>dropEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-effectiveWinId"><strong>effectiveWinId</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-ensurePolished"><strong>ensurePolished</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-enterEvent"><strong>enterEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-event"><strong>event</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-focusInEvent"><strong>focusInEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-focusNextChild"><strong>focusNextChild</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-focusNextPrevChild"><strong>focusNextPrevChild</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-focusOutEvent"><strong>focusOutEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-focusPolicy"><strong>focusPolicy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-focusPreviousChild"><strong>focusPreviousChild</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-focusProxy"><strong>focusProxy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-focusWidget"><strong>focusWidget</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-font"><strong>font</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-fontInfo"><strong>fontInfo</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-fontMetrics"><strong>fontMetrics</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-foregroundRole"><strong>foregroundRole</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-frameGeometry"><strong>frameGeometry</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-frameSize"><strong>frameSize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-geometry"><strong>geometry</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-getContentsMargins"><strong>getContentsMargins</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-grabGesture"><strong>grabGesture</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-grabKeyboard"><strong>grabKeyboard</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-grabMouse"><strong>grabMouse</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-grabShortcut"><strong>grabShortcut</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-graphicsEffect"><strong>graphicsEffect</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-graphicsProxyWidget"><strong>graphicsProxyWidget</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-hasFocus"><strong>hasFocus</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-hasMouseTracking"><strong>hasMouseTracking</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-height"><strong>height</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-heightForWidth"><strong>heightForWidth</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-hide"><strong>hide</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-hideEvent"><strong>hideEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-inputContext"><strong>inputContext</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-inputMethodEvent"><strong>inputMethodEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-inputMethodHints"><strong>inputMethodHints</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-inputMethodQuery"><strong>inputMethodQuery</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-insertAction"><strong>insertAction</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-insertActions"><strong>insertActions</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-isActiveWindow"><strong>isActiveWindow</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-isAncestorOf"><strong>isAncestorOf</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-isEnabled"><strong>isEnabled</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-isEnabledTo"><strong>isEnabledTo</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-isFullScreen"><strong>isFullScreen</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-isHidden"><strong>isHidden</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-isLeftToRight"><strong>isLeftToRight</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-isMaximized"><strong>isMaximized</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-isMinimized"><strong>isMinimized</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-isModal"><strong>isModal</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-isRightToLeft"><strong>isRightToLeft</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-isVisible"><strong>isVisible</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-isVisibleTo"><strong>isVisibleTo</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-isWindow"><strong>isWindow</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-isWindowModified"><strong>isWindowModified</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-keyReleaseEvent"><strong>keyReleaseEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-languageChange"><strong>languageChange</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-layout"><strong>layout</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-layoutDirection"><strong>layoutDirection</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-leaveEvent"><strong>leaveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-locale"><strong>locale</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-lower"><strong>lower</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-mapFrom"><strong>mapFrom</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-mapFromGlobal"><strong>mapFromGlobal</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-mapFromParent"><strong>mapFromParent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-mapTo"><strong>mapTo</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-mapToGlobal"><strong>mapToGlobal</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-mapToParent"><strong>mapToParent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-mask"><strong>mask</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-maximumHeight"><strong>maximumHeight</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-maximumSize"><strong>maximumSize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-maximumWidth"><strong>maximumWidth</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-metric"><strong>metric</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-minimumHeight"><strong>minimumHeight</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-minimumSize"><strong>minimumSize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-minimumWidth"><strong>minimumWidth</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-mouseDoubleClickEvent"><strong>mouseDoubleClickEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-mouseMoveEvent"><strong>mouseMoveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-mousePressEvent"><strong>mousePressEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-mouseReleaseEvent"><strong>mouseReleaseEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-move"><strong>move</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-moveEvent"><strong>moveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-nativeParentWidget"><strong>nativeParentWidget</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-nextInFocusChain"><strong>nextInFocusChain</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-normalGeometry"><strong>normalGeometry</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-overrideWindowFlags"><strong>overrideWindowFlags</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-overrideWindowState"><strong>overrideWindowState</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-paintEngine"><strong>paintEngine</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-paintEvent"><strong>paintEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-palette"><strong>palette</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-parentWidget"><strong>parentWidget</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-pos"><strong>pos</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-previousInFocusChain"><strong>previousInFocusChain</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-raise_"><strong>raise_</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-rect"><strong>rect</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-releaseKeyboard"><strong>releaseKeyboard</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-releaseMouse"><strong>releaseMouse</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-releaseShortcut"><strong>releaseShortcut</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-removeAction"><strong>removeAction</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-render"><strong>render</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-repaint"><strong>repaint</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-resetInputContext"><strong>resetInputContext</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-resize"><strong>resize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-restoreGeometry"><strong>restoreGeometry</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-saveGeometry"><strong>saveGeometry</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-scroll"><strong>scroll</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setAcceptDrops"><strong>setAcceptDrops</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setAccessibleDescription"><strong>setAccessibleDescription</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setAccessibleName"><strong>setAccessibleName</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setAttribute"><strong>setAttribute</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setAutoFillBackground"><strong>setAutoFillBackground</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setBackgroundRole"><strong>setBackgroundRole</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setBaseSize"><strong>setBaseSize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setContentsMargins"><strong>setContentsMargins</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setContextMenuPolicy"><strong>setContextMenuPolicy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setCursor"><strong>setCursor</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setDisabled"><strong>setDisabled</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setEnabled"><strong>setEnabled</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setFixedHeight"><strong>setFixedHeight</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setFixedSize"><strong>setFixedSize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setFixedWidth"><strong>setFixedWidth</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setFocus"><strong>setFocus</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setFocusPolicy"><strong>setFocusPolicy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setFocusProxy"><strong>setFocusProxy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setFont"><strong>setFont</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setForegroundRole"><strong>setForegroundRole</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setGeometry"><strong>setGeometry</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setGraphicsEffect"><strong>setGraphicsEffect</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setHidden"><strong>setHidden</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setInputContext"><strong>setInputContext</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setInputMethodHints"><strong>setInputMethodHints</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setLayout"><strong>setLayout</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setLayoutDirection"><strong>setLayoutDirection</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setLocale"><strong>setLocale</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setMask"><strong>setMask</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setMaximumHeight"><strong>setMaximumHeight</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setMaximumSize"><strong>setMaximumSize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setMaximumWidth"><strong>setMaximumWidth</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setMinimumHeight"><strong>setMinimumHeight</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setMinimumSize"><strong>setMinimumSize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setMinimumWidth"><strong>setMinimumWidth</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setMouseTracking"><strong>setMouseTracking</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setPalette"><strong>setPalette</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setParent"><strong>setParent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setShortcutAutoRepeat"><strong>setShortcutAutoRepeat</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setShortcutEnabled"><strong>setShortcutEnabled</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setSizeIncrement"><strong>setSizeIncrement</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setSizePolicy"><strong>setSizePolicy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setStatusTip"><strong>setStatusTip</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setStyle"><strong>setStyle</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setStyleSheet"><strong>setStyleSheet</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setToolTip"><strong>setToolTip</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setUpdatesEnabled"><strong>setUpdatesEnabled</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setWhatsThis"><strong>setWhatsThis</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setWindowFilePath"><strong>setWindowFilePath</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setWindowFlags"><strong>setWindowFlags</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setWindowIcon"><strong>setWindowIcon</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setWindowIconText"><strong>setWindowIconText</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setWindowModality"><strong>setWindowModality</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setWindowModified"><strong>setWindowModified</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setWindowOpacity"><strong>setWindowOpacity</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setWindowRole"><strong>setWindowRole</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setWindowState"><strong>setWindowState</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setWindowTitle"><strong>setWindowTitle</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-show"><strong>show</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-showFullScreen"><strong>showFullScreen</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-showMaximized"><strong>showMaximized</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-showMinimized"><strong>showMinimized</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-showNormal"><strong>showNormal</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-size"><strong>size</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-sizeIncrement"><strong>sizeIncrement</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-sizePolicy"><strong>sizePolicy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-stackUnder"><strong>stackUnder</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-statusTip"><strong>statusTip</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-style"><strong>style</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-styleSheet"><strong>styleSheet</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-tabletEvent"><strong>tabletEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-testAttribute"><strong>testAttribute</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-toolTip"><strong>toolTip</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-underMouse"><strong>underMouse</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-ungrabGesture"><strong>ungrabGesture</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-unsetCursor"><strong>unsetCursor</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-unsetLayoutDirection"><strong>unsetLayoutDirection</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-unsetLocale"><strong>unsetLocale</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-update"><strong>update</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-updateGeometry"><strong>updateGeometry</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-updateMicroFocus"><strong>updateMicroFocus</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-updatesEnabled"><strong>updatesEnabled</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-visibleRegion"><strong>visibleRegion</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-whatsThis"><strong>whatsThis</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-wheelEvent"><strong>wheelEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-width"><strong>width</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-winId"><strong>winId</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-window"><strong>window</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-windowFilePath"><strong>windowFilePath</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-windowFlags"><strong>windowFlags</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-windowIcon"><strong>windowIcon</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-windowIconText"><strong>windowIconText</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-windowModality"><strong>windowModality</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-windowOpacity"><strong>windowOpacity</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-windowRole"><strong>windowRole</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-windowState"><strong>windowState</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-windowTitle"><strong>windowTitle</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-windowType"><strong>windowType</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-x"><strong>x</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-x11Info"><strong>x11Info</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-x11PictureHandle"><strong>x11PictureHandle</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-y"><strong>y</strong></a>(...)</dt></dl>
+
+<hr>
+Static methods inherited from <a href="PySide.QtGui.html#QWidget">PySide.QtGui.QWidget</a>:<br>
+<dl><dt><a name="Form-keyboardGrabber"><strong>keyboardGrabber</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-mouseGrabber"><strong>mouseGrabber</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setTabOrder"><strong>setTabOrder</strong></a>(...)</dt></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PySide.QtGui.html#QWidget">PySide.QtGui.QWidget</a>:<br>
+<dl><dt><strong>DrawChildren</strong> = PySide.QtGui.QWidget.RenderFlag.DrawChildren</dl>
+
+<dl><dt><strong>DrawWindowBackground</strong> = PySide.QtGui.QWidget.RenderFlag.DrawWindowBackground</dl>
+
+<dl><dt><strong>IgnoreMask</strong> = PySide.QtGui.QWidget.RenderFlag.IgnoreMask</dl>
+
+<dl><dt><strong>RenderFlag</strong> = &lt;type 'PySide.QtGui.QWidget.RenderFlag'&gt;</dl>
+
+<dl><dt><strong>RenderFlags</strong> = &lt;type 'RenderFlags'&gt;</dl>
+
+<dl><dt><strong>customContextMenuRequested</strong> = &lt;PySide.QtCore.Signal object&gt;<dd><tt>Signal</tt></dl>
+
+<hr>
+Methods inherited from <a href="PySide.QtCore.html#QObject">PySide.QtCore.QObject</a>:<br>
+<dl><dt><a name="Form-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#Form-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="Form-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#Form-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="Form-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#Form-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="Form-blockSignals"><strong>blockSignals</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-childEvent"><strong>childEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-children"><strong>children</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-connectNotify"><strong>connectNotify</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-customEvent"><strong>customEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-deleteLater"><strong>deleteLater</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-disconnectNotify"><strong>disconnectNotify</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-dumpObjectInfo"><strong>dumpObjectInfo</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-dumpObjectTree"><strong>dumpObjectTree</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-dynamicPropertyNames"><strong>dynamicPropertyNames</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-emit"><strong>emit</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-findChild"><strong>findChild</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-findChildren"><strong>findChildren</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-inherits"><strong>inherits</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-installEventFilter"><strong>installEventFilter</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-isWidgetType"><strong>isWidgetType</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-killTimer"><strong>killTimer</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-metaObject"><strong>metaObject</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-moveToThread"><strong>moveToThread</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-objectName"><strong>objectName</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-parent"><strong>parent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-property"><strong>property</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-receivers"><strong>receivers</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-removeEventFilter"><strong>removeEventFilter</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-sender"><strong>sender</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-senderSignalIndex"><strong>senderSignalIndex</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setObjectName"><strong>setObjectName</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-setProperty"><strong>setProperty</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-signalsBlocked"><strong>signalsBlocked</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-startTimer"><strong>startTimer</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-thread"><strong>thread</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-timerEvent"><strong>timerEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-tr"><strong>tr</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-trUtf8"><strong>trUtf8</strong></a>(...)</dt></dl>
+
+<hr>
+Static methods inherited from <a href="PySide.QtCore.html#QObject">PySide.QtCore.QObject</a>:<br>
+<dl><dt><a name="Form-connect"><strong>connect</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-disconnect"><strong>disconnect</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-registerUserData"><strong>registerUserData</strong></a>(...)</dt></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PySide.QtCore.html#QObject">PySide.QtCore.QObject</a>:<br>
+<dl><dt><strong>destroyed</strong> = &lt;PySide.QtCore.Signal object&gt;<dd><tt>Signal</tt></dl>
+
+<hr>
+Methods inherited from <a href="PySide.QtGui.html#QPaintDevice">PySide.QtGui.QPaintDevice</a>:<br>
+<dl><dt><a name="Form-colorCount"><strong>colorCount</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-depth"><strong>depth</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-heightMM"><strong>heightMM</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-logicalDpiX"><strong>logicalDpiX</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-logicalDpiY"><strong>logicalDpiY</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-numColors"><strong>numColors</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-paintingActive"><strong>paintingActive</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-physicalDpiX"><strong>physicalDpiX</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-physicalDpiY"><strong>physicalDpiY</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="Form-widthMM"><strong>widthMM</strong></a>(...)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="PySide.QtGui.html#QPaintDevice">PySide.QtGui.QPaintDevice</a>:<br>
+<dl><dt><strong>painters</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="PySide.QtGui.html#QPaintDevice">PySide.QtGui.QPaintDevice</a>:<br>
+<dl><dt><strong>PaintDeviceMetric</strong> = &lt;type 'PySide.QtGui.QPaintDevice.PaintDeviceMetric'&gt;</dl>
+
+<dl><dt><strong>PdmDepth</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmDepth</dl>
+
+<dl><dt><strong>PdmDpiX</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmDpiX</dl>
+
+<dl><dt><strong>PdmDpiY</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmDpiY</dl>
+
+<dl><dt><strong>PdmHeight</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmHeight</dl>
+
+<dl><dt><strong>PdmHeightMM</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmHeightMM</dl>
+
+<dl><dt><strong>PdmNumColors</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmNumColors</dl>
+
+<dl><dt><strong>PdmPhysicalDpiX</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmPhysicalDpiX</dl>
+
+<dl><dt><strong>PdmPhysicalDpiY</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmPhysicalDpiY</dl>
+
+<dl><dt><strong>PdmWidth</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmWidth</dl>
+
+<dl><dt><strong>PdmWidthMM</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmWidthMM</dl>
+
+<hr>
+Data descriptors inherited from Shiboken.Object:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

@@ -8,6 +8,7 @@ import view_nuevoproducto
 
 class TablaProductos(QtGui.QWidget):
     def __init__(self):
+        """Constructor principal de la interfaz grafica del programa"""
         super(TablaProductos, self).__init__()
 
         self.tipoModel = None
@@ -23,12 +24,14 @@ class TablaProductos(QtGui.QWidget):
         self.show()
 
     def center(self):
+        """Funcion que centra la interfaz grafica en la pantalla"""
         qr = self.frameGeometry()
         cp = QtGui.QDesktopWidget().availableGeometry().center()
         qr.moveCenter(cp)
         self.move(qr.topLeft())
 
     def renderToolBox(self):
+        """Funcion que agrega los botones principales a la interfaz grafica"""
         self.toolbox = QtGui.QWidget(self)
         self.tb_layout = QtGui.QHBoxLayout()
         self.tb_layout.setAlignment(QtCore.Qt.AlignRight)
@@ -45,6 +48,8 @@ class TablaProductos(QtGui.QWidget):
         self.mainLayout.addWidget(self.toolbox)
 
     def renderSearchToolBox(self):
+        """Funcion que agrega la opcion de escribir el producto
+        que el usuario busca y un boton para seleccionar la marca"""
         self.toolbox2 = QtGui.QWidget(self)
         self.tb2_layout = QtGui.QHBoxLayout()
         self.tb2_layout.setAlignment(QtCore.Qt.AlignLeft)
@@ -69,6 +74,7 @@ class TablaProductos(QtGui.QWidget):
         self.mainLayout.addWidget(self.toolbox2)
 
     def llenarComboBox(self):
+        """Funcion que inserta las marcas en el comboBox"""
         marcas = controller.obtener_marcas()
         index = 1
         self.filtroBusquedaMarcaComboBox.insertItem(0, u"Todas")
@@ -77,6 +83,7 @@ class TablaProductos(QtGui.QWidget):
             index = index + 1
 
     def renderProxyTable(self):
+        """Funcion que crea la tabla de productos"""
         producto = controller.obtener_productos()
         self.proxyModel = QtGui.QSortFilterProxyModel()
         self.proxyModel.setDynamicSortFilter(True)
@@ -102,6 +109,8 @@ class TablaProductos(QtGui.QWidget):
         self.setLayout(self.mainLayout)
 
     def setSourceModel(self, model):
+        """Funcion que asigna el largo de las filas en la tabla productos
+        @param model"""
         self.proxyModel.setSourceModel(model)
         producto = controller.obtener_productos()
         self.proxyGroupBox.setTitle(u"Total Productos: {0}".format(len(producto)))
@@ -117,6 +126,9 @@ class TablaProductos(QtGui.QWidget):
         self.llenarComboBox()
 
     def loadData(self, parent):
+        """Funcion que actualiza la tabla productos
+        @param parent
+        @return model"""
         self.tipoModel = parent
         producto = controller.obtener_productos()
 
@@ -149,6 +161,7 @@ class TablaProductos(QtGui.QWidget):
         return self.model
 
     def setSignals(self):
+        """Funcion que capta las señales de los botones"""
         self.btn_add.clicked.connect(self.add)
         self.btn_edit.clicked.connect(self.edit)
         self.btn_delete.clicked.connect(self.delete)
@@ -160,11 +173,13 @@ class TablaProductos(QtGui.QWidget):
             )
 
     def add(self):
+        """Funcion que muestra el formulario de nuevo producto"""
         form = view_nuevoproducto.Form(self.code())
         form.exec_()
         self.setSourceModel(self.loadData(self.tipoModel))
 
     def edit(self):
+        """Funcion que muestra el formulario editar producto"""
         index = self.proxyView.currentIndex()
         if index.row() == -1:  # No se ha seleccionado una fila
             self.errorMessageDialog = QtGui.QErrorMessage(self)
@@ -178,12 +193,15 @@ class TablaProductos(QtGui.QWidget):
             self.setSourceModel(self.loadData(self.tipoModel))
 
     def code(self):
+        """Funcion que retorna el codigo del producto seleccionado en la tabla
+        @return codi"""
         model = self.proxyView.model()
         index = self.proxyView.currentIndex()
         self.codi = model.index(index.row(), 0, QtCore.QModelIndex()).data()
         return self.codi
 
     def delete(self):
+        """Funcion que permite eliminar el producto de la tabla"""
         index = self.proxyView.currentIndex()
         if index.row() == -1:  # No se ha seleccionado una fila
             self.errorMessageDialog = QtGui.QErrorMessage(self)
@@ -217,6 +235,7 @@ class TablaProductos(QtGui.QWidget):
             self.btn_ok.clicked.connect(self.borrar)
 
     def borrar(self):
+        """Funcion que confirma la eliminacion del producto en la tabla"""
         model = self.proxyView.model()
         index = self.proxyView.currentIndex()
         codigo = model.index(index.row(), 0, QtCore.QModelIndex()).data()
@@ -234,6 +253,7 @@ class TablaProductos(QtGui.QWidget):
                                                     registro""")
 
     def filtrarProductos(self):
+        """Funcion que filtra productos buscados por el usuario"""
         self.proxyModel.setFilterKeyColumn(1)
 
         productoAFiltrar = QtCore.QRegExp(
@@ -243,6 +263,7 @@ class TablaProductos(QtGui.QWidget):
         self.proxyModel.setFilterRegExp(productoAFiltrar)
 
     def filtrarMarca(self):
+        """Funcion que filtra productos por marca en la tabla"""
         self.proxyModel.setFilterKeyColumn(5)
 
         index = self.filtroBusquedaMarcaComboBox.currentIndex()
