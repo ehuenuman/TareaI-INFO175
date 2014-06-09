@@ -16,9 +16,10 @@ class FormNewUser (QtGui.QDialog):
         self.ui.crearButton.clicked.connect(self.checkDatos)
 
     def checkDatos(self):
+        nombre = self.ui.nombreLineEdit.text()
         usuario = self.ui.usuarioLineEdit.text()
         password = self.ui.passLineEdit.text()
-        mensaje = controller_user.nuevosDatos(usuario, password)
+        mensaje = controller_user.nuevosDatos(nombre, usuario, password)
         if mensaje is "Correcto":
             correctoQMessageBox = QtGui.QMessageBox()
             correctoQMessageBox.setWindowTitle("Usuario Creado!")
