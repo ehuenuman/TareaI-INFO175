@@ -1,0 +1,757 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module tabla_productos</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>tabla_productos</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/xelbol/Info-175/respaldo/tabla_productos.py">/home/xelbol/Info-175/respaldo/tabla_productos.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="PySide.QtCore.html">PySide.QtCore</a><br>
+<a href="PySide.QtGui.html">PySide.QtGui</a><br>
+</td><td width="25%" valign=top><a href="controller.html">controller</a><br>
+<a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top><a href="view_nuevoproducto.html">view_nuevoproducto</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="PySide.QtGui.html#QWidget">PySide.QtGui.QWidget</a>(<a href="PySide.QtCore.html#QObject">PySide.QtCore.QObject</a>, <a href="PySide.QtGui.html#QPaintDevice">PySide.QtGui.QPaintDevice</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="tabla_productos.html#TablaProductos">TablaProductos</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TablaProductos">class <strong>TablaProductos</strong></a>(<a href="PySide.QtGui.html#QWidget">PySide.QtGui.QWidget</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="tabla_productos.html#TablaProductos">TablaProductos</a></dd>
+<dd><a href="PySide.QtGui.html#QWidget">PySide.QtGui.QWidget</a></dd>
+<dd><a href="PySide.QtCore.html#QObject">PySide.QtCore.QObject</a></dd>
+<dd><a href="PySide.QtGui.html#QPaintDevice">PySide.QtGui.QPaintDevice</a></dd>
+<dd>Shiboken.Object</dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="TablaProductos-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Constructor&nbsp;principal&nbsp;de&nbsp;la&nbsp;interfaz&nbsp;grafica&nbsp;del&nbsp;programa</tt></dd></dl>
+
+<dl><dt><a name="TablaProductos-add"><strong>add</strong></a>(self)</dt><dd><tt>Funcion&nbsp;que&nbsp;muestra&nbsp;el&nbsp;formulario&nbsp;de&nbsp;nuevo&nbsp;producto</tt></dd></dl>
+
+<dl><dt><a name="TablaProductos-borrar"><strong>borrar</strong></a>(self)</dt><dd><tt>Funcion&nbsp;que&nbsp;confirma&nbsp;la&nbsp;eliminacion&nbsp;del&nbsp;producto&nbsp;en&nbsp;la&nbsp;tabla</tt></dd></dl>
+
+<dl><dt><a name="TablaProductos-center"><strong>center</strong></a>(self)</dt><dd><tt>Funcion&nbsp;que&nbsp;centra&nbsp;la&nbsp;interfaz&nbsp;grafica&nbsp;en&nbsp;la&nbsp;pantalla</tt></dd></dl>
+
+<dl><dt><a name="TablaProductos-code"><strong>code</strong></a>(self)</dt><dd><tt>Funcion&nbsp;que&nbsp;retorna&nbsp;el&nbsp;codigo&nbsp;del&nbsp;producto&nbsp;seleccionado&nbsp;en&nbsp;la&nbsp;tabla<br>
+@return&nbsp;codi</tt></dd></dl>
+
+<dl><dt><a name="TablaProductos-delete"><strong>delete</strong></a>(self)</dt><dd><tt>Funcion&nbsp;que&nbsp;permite&nbsp;eliminar&nbsp;el&nbsp;producto&nbsp;de&nbsp;la&nbsp;tabla</tt></dd></dl>
+
+<dl><dt><a name="TablaProductos-edit"><strong>edit</strong></a>(self)</dt><dd><tt>Funcion&nbsp;que&nbsp;muestra&nbsp;el&nbsp;formulario&nbsp;editar&nbsp;producto</tt></dd></dl>
+
+<dl><dt><a name="TablaProductos-filtrarMarca"><strong>filtrarMarca</strong></a>(self)</dt><dd><tt>Funcion&nbsp;que&nbsp;filtra&nbsp;productos&nbsp;por&nbsp;marca&nbsp;en&nbsp;la&nbsp;tabla</tt></dd></dl>
+
+<dl><dt><a name="TablaProductos-filtrarProductos"><strong>filtrarProductos</strong></a>(self)</dt><dd><tt>Funcion&nbsp;que&nbsp;filtra&nbsp;productos&nbsp;buscados&nbsp;por&nbsp;el&nbsp;usuario</tt></dd></dl>
+
+<dl><dt><a name="TablaProductos-llenarComboBox"><strong>llenarComboBox</strong></a>(self)</dt><dd><tt>Funcion&nbsp;que&nbsp;inserta&nbsp;las&nbsp;marcas&nbsp;en&nbsp;el&nbsp;comboBox</tt></dd></dl>
+
+<dl><dt><a name="TablaProductos-loadData"><strong>loadData</strong></a>(self, parent)</dt><dd><tt>Funcion&nbsp;que&nbsp;actualiza&nbsp;la&nbsp;tabla&nbsp;productos<br>
+@param&nbsp;parent<br>
+@return&nbsp;model</tt></dd></dl>
+
+<dl><dt><a name="TablaProductos-renderProxyTable"><strong>renderProxyTable</strong></a>(self)</dt><dd><tt>Funcion&nbsp;que&nbsp;crea&nbsp;la&nbsp;tabla&nbsp;de&nbsp;productos</tt></dd></dl>
+
+<dl><dt><a name="TablaProductos-renderSearchToolBox"><strong>renderSearchToolBox</strong></a>(self)</dt><dd><tt>Funcion&nbsp;que&nbsp;agrega&nbsp;la&nbsp;opcion&nbsp;de&nbsp;escribir&nbsp;el&nbsp;producto<br>
+que&nbsp;el&nbsp;usuario&nbsp;busca&nbsp;y&nbsp;un&nbsp;boton&nbsp;para&nbsp;seleccionar&nbsp;la&nbsp;marca</tt></dd></dl>
+
+<dl><dt><a name="TablaProductos-renderToolBox"><strong>renderToolBox</strong></a>(self)</dt><dd><tt>Funcion&nbsp;que&nbsp;agrega&nbsp;los&nbsp;botones&nbsp;principales&nbsp;a&nbsp;la&nbsp;interfaz&nbsp;grafica</tt></dd></dl>
+
+<dl><dt><a name="TablaProductos-setSignals"><strong>setSignals</strong></a>(self)</dt><dd><tt>Funcion&nbsp;que&nbsp;capta&nbsp;las&nbsp;señales&nbsp;de&nbsp;los&nbsp;botones</tt></dd></dl>
+
+<dl><dt><a name="TablaProductos-setSourceModel"><strong>setSourceModel</strong></a>(self, model)</dt><dd><tt>Funcion&nbsp;que&nbsp;asigna&nbsp;el&nbsp;largo&nbsp;de&nbsp;las&nbsp;filas&nbsp;en&nbsp;la&nbsp;tabla&nbsp;productos<br>
+@param&nbsp;model</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>staticMetaObject</strong> = &lt;PySide.QtCore.QMetaObject object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="PySide.QtGui.html#QWidget">PySide.QtGui.QWidget</a>:<br>
+<dl><dt><a name="TablaProductos-acceptDrops"><strong>acceptDrops</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-accessibleDescription"><strong>accessibleDescription</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-accessibleName"><strong>accessibleName</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-actionEvent"><strong>actionEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-actions"><strong>actions</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-activateWindow"><strong>activateWindow</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-addAction"><strong>addAction</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-addActions"><strong>addActions</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-adjustSize"><strong>adjustSize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-autoFillBackground"><strong>autoFillBackground</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-backgroundRole"><strong>backgroundRole</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-baseSize"><strong>baseSize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-changeEvent"><strong>changeEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-childAt"><strong>childAt</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-childrenRect"><strong>childrenRect</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-childrenRegion"><strong>childrenRegion</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-clearFocus"><strong>clearFocus</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-clearMask"><strong>clearMask</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-close"><strong>close</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-closeEvent"><strong>closeEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-contentsMargins"><strong>contentsMargins</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-contentsRect"><strong>contentsRect</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-contextMenuEvent"><strong>contextMenuEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-contextMenuPolicy"><strong>contextMenuPolicy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-createWinId"><strong>createWinId</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-cursor"><strong>cursor</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-destroy"><strong>destroy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-devType"><strong>devType</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-dragEnterEvent"><strong>dragEnterEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-dragLeaveEvent"><strong>dragLeaveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-dragMoveEvent"><strong>dragMoveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-dropEvent"><strong>dropEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-effectiveWinId"><strong>effectiveWinId</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-ensurePolished"><strong>ensurePolished</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-enterEvent"><strong>enterEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-event"><strong>event</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-focusInEvent"><strong>focusInEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-focusNextChild"><strong>focusNextChild</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-focusNextPrevChild"><strong>focusNextPrevChild</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-focusOutEvent"><strong>focusOutEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-focusPolicy"><strong>focusPolicy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-focusPreviousChild"><strong>focusPreviousChild</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-focusProxy"><strong>focusProxy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-focusWidget"><strong>focusWidget</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-font"><strong>font</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-fontInfo"><strong>fontInfo</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-fontMetrics"><strong>fontMetrics</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-foregroundRole"><strong>foregroundRole</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-frameGeometry"><strong>frameGeometry</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-frameSize"><strong>frameSize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-geometry"><strong>geometry</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-getContentsMargins"><strong>getContentsMargins</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-grabGesture"><strong>grabGesture</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-grabKeyboard"><strong>grabKeyboard</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-grabMouse"><strong>grabMouse</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-grabShortcut"><strong>grabShortcut</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-graphicsEffect"><strong>graphicsEffect</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-graphicsProxyWidget"><strong>graphicsProxyWidget</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-hasFocus"><strong>hasFocus</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-hasMouseTracking"><strong>hasMouseTracking</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-height"><strong>height</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-heightForWidth"><strong>heightForWidth</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-hide"><strong>hide</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-hideEvent"><strong>hideEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-inputContext"><strong>inputContext</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-inputMethodEvent"><strong>inputMethodEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-inputMethodHints"><strong>inputMethodHints</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-inputMethodQuery"><strong>inputMethodQuery</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-insertAction"><strong>insertAction</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-insertActions"><strong>insertActions</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-isActiveWindow"><strong>isActiveWindow</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-isAncestorOf"><strong>isAncestorOf</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-isEnabled"><strong>isEnabled</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-isEnabledTo"><strong>isEnabledTo</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-isFullScreen"><strong>isFullScreen</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-isHidden"><strong>isHidden</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-isLeftToRight"><strong>isLeftToRight</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-isMaximized"><strong>isMaximized</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-isMinimized"><strong>isMinimized</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-isModal"><strong>isModal</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-isRightToLeft"><strong>isRightToLeft</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-isVisible"><strong>isVisible</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-isVisibleTo"><strong>isVisibleTo</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-isWindow"><strong>isWindow</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-isWindowModified"><strong>isWindowModified</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-keyPressEvent"><strong>keyPressEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-keyReleaseEvent"><strong>keyReleaseEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-languageChange"><strong>languageChange</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-layout"><strong>layout</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-layoutDirection"><strong>layoutDirection</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-leaveEvent"><strong>leaveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-locale"><strong>locale</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-lower"><strong>lower</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-mapFrom"><strong>mapFrom</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-mapFromGlobal"><strong>mapFromGlobal</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-mapFromParent"><strong>mapFromParent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-mapTo"><strong>mapTo</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-mapToGlobal"><strong>mapToGlobal</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-mapToParent"><strong>mapToParent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-mask"><strong>mask</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-maximumHeight"><strong>maximumHeight</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-maximumSize"><strong>maximumSize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-maximumWidth"><strong>maximumWidth</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-metric"><strong>metric</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-minimumHeight"><strong>minimumHeight</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-minimumSize"><strong>minimumSize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-minimumSizeHint"><strong>minimumSizeHint</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-minimumWidth"><strong>minimumWidth</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-mouseDoubleClickEvent"><strong>mouseDoubleClickEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-mouseMoveEvent"><strong>mouseMoveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-mousePressEvent"><strong>mousePressEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-mouseReleaseEvent"><strong>mouseReleaseEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-move"><strong>move</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-moveEvent"><strong>moveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-nativeParentWidget"><strong>nativeParentWidget</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-nextInFocusChain"><strong>nextInFocusChain</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-normalGeometry"><strong>normalGeometry</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-overrideWindowFlags"><strong>overrideWindowFlags</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-overrideWindowState"><strong>overrideWindowState</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-paintEngine"><strong>paintEngine</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-paintEvent"><strong>paintEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-palette"><strong>palette</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-parentWidget"><strong>parentWidget</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-pos"><strong>pos</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-previousInFocusChain"><strong>previousInFocusChain</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-raise_"><strong>raise_</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-rect"><strong>rect</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-releaseKeyboard"><strong>releaseKeyboard</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-releaseMouse"><strong>releaseMouse</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-releaseShortcut"><strong>releaseShortcut</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-removeAction"><strong>removeAction</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-render"><strong>render</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-repaint"><strong>repaint</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-resetInputContext"><strong>resetInputContext</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-resize"><strong>resize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-resizeEvent"><strong>resizeEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-restoreGeometry"><strong>restoreGeometry</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-saveGeometry"><strong>saveGeometry</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-scroll"><strong>scroll</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setAcceptDrops"><strong>setAcceptDrops</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setAccessibleDescription"><strong>setAccessibleDescription</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setAccessibleName"><strong>setAccessibleName</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setAttribute"><strong>setAttribute</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setAutoFillBackground"><strong>setAutoFillBackground</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setBackgroundRole"><strong>setBackgroundRole</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setBaseSize"><strong>setBaseSize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setContentsMargins"><strong>setContentsMargins</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setContextMenuPolicy"><strong>setContextMenuPolicy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setCursor"><strong>setCursor</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setDisabled"><strong>setDisabled</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setEnabled"><strong>setEnabled</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setFixedHeight"><strong>setFixedHeight</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setFixedSize"><strong>setFixedSize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setFixedWidth"><strong>setFixedWidth</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setFocus"><strong>setFocus</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setFocusPolicy"><strong>setFocusPolicy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setFocusProxy"><strong>setFocusProxy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setFont"><strong>setFont</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setForegroundRole"><strong>setForegroundRole</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setGeometry"><strong>setGeometry</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setGraphicsEffect"><strong>setGraphicsEffect</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setHidden"><strong>setHidden</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setInputContext"><strong>setInputContext</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setInputMethodHints"><strong>setInputMethodHints</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setLayout"><strong>setLayout</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setLayoutDirection"><strong>setLayoutDirection</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setLocale"><strong>setLocale</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setMask"><strong>setMask</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setMaximumHeight"><strong>setMaximumHeight</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setMaximumSize"><strong>setMaximumSize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setMaximumWidth"><strong>setMaximumWidth</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setMinimumHeight"><strong>setMinimumHeight</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setMinimumSize"><strong>setMinimumSize</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setMinimumWidth"><strong>setMinimumWidth</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setMouseTracking"><strong>setMouseTracking</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setPalette"><strong>setPalette</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setParent"><strong>setParent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setShortcutAutoRepeat"><strong>setShortcutAutoRepeat</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setShortcutEnabled"><strong>setShortcutEnabled</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setSizeIncrement"><strong>setSizeIncrement</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setSizePolicy"><strong>setSizePolicy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setStatusTip"><strong>setStatusTip</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setStyle"><strong>setStyle</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setStyleSheet"><strong>setStyleSheet</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setToolTip"><strong>setToolTip</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setUpdatesEnabled"><strong>setUpdatesEnabled</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setVisible"><strong>setVisible</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setWhatsThis"><strong>setWhatsThis</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setWindowFilePath"><strong>setWindowFilePath</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setWindowFlags"><strong>setWindowFlags</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setWindowIcon"><strong>setWindowIcon</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setWindowIconText"><strong>setWindowIconText</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setWindowModality"><strong>setWindowModality</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setWindowModified"><strong>setWindowModified</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setWindowOpacity"><strong>setWindowOpacity</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setWindowRole"><strong>setWindowRole</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setWindowState"><strong>setWindowState</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setWindowTitle"><strong>setWindowTitle</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-show"><strong>show</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-showEvent"><strong>showEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-showFullScreen"><strong>showFullScreen</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-showMaximized"><strong>showMaximized</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-showMinimized"><strong>showMinimized</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-showNormal"><strong>showNormal</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-size"><strong>size</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-sizeHint"><strong>sizeHint</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-sizeIncrement"><strong>sizeIncrement</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-sizePolicy"><strong>sizePolicy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-stackUnder"><strong>stackUnder</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-statusTip"><strong>statusTip</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-style"><strong>style</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-styleSheet"><strong>styleSheet</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-tabletEvent"><strong>tabletEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-testAttribute"><strong>testAttribute</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-toolTip"><strong>toolTip</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-underMouse"><strong>underMouse</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-ungrabGesture"><strong>ungrabGesture</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-unsetCursor"><strong>unsetCursor</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-unsetLayoutDirection"><strong>unsetLayoutDirection</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-unsetLocale"><strong>unsetLocale</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-update"><strong>update</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-updateGeometry"><strong>updateGeometry</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-updateMicroFocus"><strong>updateMicroFocus</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-updatesEnabled"><strong>updatesEnabled</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-visibleRegion"><strong>visibleRegion</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-whatsThis"><strong>whatsThis</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-wheelEvent"><strong>wheelEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-width"><strong>width</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-winId"><strong>winId</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-window"><strong>window</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-windowFilePath"><strong>windowFilePath</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-windowFlags"><strong>windowFlags</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-windowIcon"><strong>windowIcon</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-windowIconText"><strong>windowIconText</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-windowModality"><strong>windowModality</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-windowOpacity"><strong>windowOpacity</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-windowRole"><strong>windowRole</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-windowState"><strong>windowState</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-windowTitle"><strong>windowTitle</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-windowType"><strong>windowType</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-x"><strong>x</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-x11Info"><strong>x11Info</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-x11PictureHandle"><strong>x11PictureHandle</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-y"><strong>y</strong></a>(...)</dt></dl>
+
+<hr>
+Static methods inherited from <a href="PySide.QtGui.html#QWidget">PySide.QtGui.QWidget</a>:<br>
+<dl><dt><a name="TablaProductos-keyboardGrabber"><strong>keyboardGrabber</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-mouseGrabber"><strong>mouseGrabber</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setTabOrder"><strong>setTabOrder</strong></a>(...)</dt></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PySide.QtGui.html#QWidget">PySide.QtGui.QWidget</a>:<br>
+<dl><dt><strong>DrawChildren</strong> = PySide.QtGui.QWidget.RenderFlag.DrawChildren</dl>
+
+<dl><dt><strong>DrawWindowBackground</strong> = PySide.QtGui.QWidget.RenderFlag.DrawWindowBackground</dl>
+
+<dl><dt><strong>IgnoreMask</strong> = PySide.QtGui.QWidget.RenderFlag.IgnoreMask</dl>
+
+<dl><dt><strong>RenderFlag</strong> = &lt;type 'PySide.QtGui.QWidget.RenderFlag'&gt;</dl>
+
+<dl><dt><strong>RenderFlags</strong> = &lt;type 'RenderFlags'&gt;</dl>
+
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of Shiboken.ObjectType object&gt;<dd><tt>T.<a href="#TablaProductos-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;object&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<dl><dt><strong>customContextMenuRequested</strong> = &lt;PySide.QtCore.Signal object&gt;<dd><tt>Signal</tt></dl>
+
+<hr>
+Methods inherited from <a href="PySide.QtCore.html#QObject">PySide.QtCore.QObject</a>:<br>
+<dl><dt><a name="TablaProductos-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#TablaProductos-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="TablaProductos-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#TablaProductos-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="TablaProductos-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#TablaProductos-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="TablaProductos-blockSignals"><strong>blockSignals</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-childEvent"><strong>childEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-children"><strong>children</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-connectNotify"><strong>connectNotify</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-customEvent"><strong>customEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-deleteLater"><strong>deleteLater</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-disconnectNotify"><strong>disconnectNotify</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-dumpObjectInfo"><strong>dumpObjectInfo</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-dumpObjectTree"><strong>dumpObjectTree</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-dynamicPropertyNames"><strong>dynamicPropertyNames</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-emit"><strong>emit</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-eventFilter"><strong>eventFilter</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-findChild"><strong>findChild</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-findChildren"><strong>findChildren</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-inherits"><strong>inherits</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-installEventFilter"><strong>installEventFilter</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-isWidgetType"><strong>isWidgetType</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-killTimer"><strong>killTimer</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-metaObject"><strong>metaObject</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-moveToThread"><strong>moveToThread</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-objectName"><strong>objectName</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-parent"><strong>parent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-property"><strong>property</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-receivers"><strong>receivers</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-removeEventFilter"><strong>removeEventFilter</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-sender"><strong>sender</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-senderSignalIndex"><strong>senderSignalIndex</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setObjectName"><strong>setObjectName</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-setProperty"><strong>setProperty</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-signalsBlocked"><strong>signalsBlocked</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-startTimer"><strong>startTimer</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-thread"><strong>thread</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-timerEvent"><strong>timerEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-tr"><strong>tr</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-trUtf8"><strong>trUtf8</strong></a>(...)</dt></dl>
+
+<hr>
+Static methods inherited from <a href="PySide.QtCore.html#QObject">PySide.QtCore.QObject</a>:<br>
+<dl><dt><a name="TablaProductos-connect"><strong>connect</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-disconnect"><strong>disconnect</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-registerUserData"><strong>registerUserData</strong></a>(...)</dt></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PySide.QtCore.html#QObject">PySide.QtCore.QObject</a>:<br>
+<dl><dt><strong>destroyed</strong> = &lt;PySide.QtCore.Signal object&gt;<dd><tt>Signal</tt></dl>
+
+<hr>
+Methods inherited from <a href="PySide.QtGui.html#QPaintDevice">PySide.QtGui.QPaintDevice</a>:<br>
+<dl><dt><a name="TablaProductos-colorCount"><strong>colorCount</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-depth"><strong>depth</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-heightMM"><strong>heightMM</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-logicalDpiX"><strong>logicalDpiX</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-logicalDpiY"><strong>logicalDpiY</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-numColors"><strong>numColors</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-paintingActive"><strong>paintingActive</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-physicalDpiX"><strong>physicalDpiX</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-physicalDpiY"><strong>physicalDpiY</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="TablaProductos-widthMM"><strong>widthMM</strong></a>(...)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="PySide.QtGui.html#QPaintDevice">PySide.QtGui.QPaintDevice</a>:<br>
+<dl><dt><strong>painters</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="PySide.QtGui.html#QPaintDevice">PySide.QtGui.QPaintDevice</a>:<br>
+<dl><dt><strong>PaintDeviceMetric</strong> = &lt;type 'PySide.QtGui.QPaintDevice.PaintDeviceMetric'&gt;</dl>
+
+<dl><dt><strong>PdmDepth</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmDepth</dl>
+
+<dl><dt><strong>PdmDpiX</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmDpiX</dl>
+
+<dl><dt><strong>PdmDpiY</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmDpiY</dl>
+
+<dl><dt><strong>PdmHeight</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmHeight</dl>
+
+<dl><dt><strong>PdmHeightMM</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmHeightMM</dl>
+
+<dl><dt><strong>PdmNumColors</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmNumColors</dl>
+
+<dl><dt><strong>PdmPhysicalDpiX</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmPhysicalDpiX</dl>
+
+<dl><dt><strong>PdmPhysicalDpiY</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmPhysicalDpiY</dl>
+
+<dl><dt><strong>PdmWidth</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmWidth</dl>
+
+<dl><dt><strong>PdmWidthMM</strong> = PySide.QtGui.QPaintDevice.PaintDeviceMetric.PdmWidthMM</dl>
+
+<hr>
+Data descriptors inherited from Shiboken.Object:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

@@ -12,6 +12,8 @@ from PySide import QtCore, QtGui
 
 class Ui_LoginUser(object):
     def setupUi(self, Dialog):
+        """Constructor principal del formulario usuarios
+        @param Dialog"""
         Dialog.setObjectName("Login User")
         Dialog.resize(320, 240)
         self.usuarioLineEdit = QtGui.QLineEdit(Dialog)
@@ -56,9 +58,14 @@ class Ui_LoginUser(object):
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def closeDialog(self, Dialog):
+        """Funcion que cierra el formulario
+        usuarios
+        @param Dialog"""
         Dialog.close()
 
     def retranslateUi(self, Dialog):
+        """Funcion que asigna los textos a los elementos del formulario
+        @param Dialog"""
         Dialog.setWindowTitle(QtGui.QApplication.translate("Dialog", "Confirmación de Identidad", None, QtGui.QApplication.UnicodeUTF8))
         self.usuarioLabel.setText(QtGui.QApplication.translate("Dialog", "Usuario:", None, QtGui.QApplication.UnicodeUTF8))
         self.passLabel.setText(QtGui.QApplication.translate("Dialog", "Contraseña:", None, QtGui.QApplication.UnicodeUTF8))
